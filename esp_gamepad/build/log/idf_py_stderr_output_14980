@@ -1,9 +1,0 @@
-CMake Error at D:/Software/Espressif/frameworks/esp-idf-v5.3.1/tools/cmake/component.cmake:314 (message):
-  Include directory 'D:/PACMAIN/Project_C/esp_gamepad/main/include/my_lib.h'
-  is not a directory.
-Call Stack (most recent call first):
-  D:/Software/Espressif/frameworks/esp-idf-v5.3.1/tools/cmake/component.cmake:482 (__component_add_include_dirs)
-  main/CMakeLists.txt:1 (idf_component_register)
-
-
-ninja: error: rebuilding 'build.ninja': subcommand failed

@@ -1,6 +1,0 @@
-CMake Error at CMakeLists.txt:16 (add_executable):
-  No SOURCES given to target: esp_gamepad
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
-ninja: error: rebuilding 'build.ninja': subcommand failed

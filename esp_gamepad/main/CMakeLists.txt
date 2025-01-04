@@ -1,9 +1,0 @@
-idf_component_register(
-  SRCS
-    "esp_gamepad.cpp"
-    "src/ws2812b.cpp"
-    "src/Gy87_lib.cpp"
-    "src/I2c_interface.cpp"
-  INCLUDE_DIRS
-    "include"
-  )
