@@ -1,0 +1,10 @@
+[1/9] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/esp_gamepad.cpp.obj
+In file included from D:/PACMAIN/Project_C/esp_gamepad/main/esp_gamepad.cpp:9:
+D:/PACMAIN/Project_C/esp_gamepad/main/include/ws2812b.h: In constructor 'Ws2812b::Ws2812b(gpio_num_t)':
+D:/PACMAIN/Project_C/esp_gamepad/main/include/ws2812b.h:49:7: warning: missing initializer for member 'rmt_tx_channel_config_t::intr_priority' [-Wmissing-field-initializers]
+   49 |       };
+      |       ^
+D:/PACMAIN/Project_C/esp_gamepad/main/include/ws2812b.h:49:7: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_loop_back' [-Wmissing-field-initializers]
+D:/PACMAIN/Project_C/esp_gamepad/main/include/ws2812b.h:49:7: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_od_mode' [-Wmissing-field-initializers]
+[2/9] Linking C static library esp-idf\main\libmain.a
+[3/9] Performing build step for 'bootloader'

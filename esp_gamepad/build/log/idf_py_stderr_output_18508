@@ -1,0 +1,11 @@
+CMake Error at main/CMakeLists.txt:3 (add_subdirectory):
+  add_subdirectory given source "include/my_lib.h" which is not an existing
+  directory.
+
+
+CMake Error at main/CMakeLists.txt:4 (target_link_libraries):
+  Cannot specify link libraries for target "main" which is not built by this
+  project.
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed
