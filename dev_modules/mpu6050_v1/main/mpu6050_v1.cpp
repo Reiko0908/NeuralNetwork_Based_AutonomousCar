@@ -38,7 +38,7 @@ extern "C" void app_main(void)
   );
 
   while(true){
-    imu.update_gyro_reading();
+    imu.update_reading();
     printf("%f5 %f5 %f5\n", imu.gyro.x, imu.gyro.y, imu.gyro.z);
     vTaskDelay(200 / portTICK_PERIOD_MS);
   }
