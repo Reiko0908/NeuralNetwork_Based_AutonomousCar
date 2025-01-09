@@ -1,4 +1,4 @@
-24166951738727672
+24177369826592283
 Arduino_pro_mini
 Arduino_pro_mini
 
@@ -56790,6 +56790,20 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+ESP32_S3_DevkitC1
+ESP32-S3-DevKitC
+ESP32-S3 general-purpose development board, based on ESP32-S3-WROOM-1 or ESP32-S3-WROOM-1U,It has all the ESP32-S3 pins exposed and is easy to connect and use.
+ESP32-S3
+0
+44
+44
+ESP32_S3_DevkitC1
+ESP32_S3_DevkitC1
+
+
+0
+44
+44
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -57980,6 +57994,13 @@ heatsink
 0
 0
 0
+IMU
+MPU6050
+
+
+0
+8
+8
 IP5306_Power_Bank
 IP5306_IC
 
@@ -64084,6 +64105,13 @@ solder jumper open
 0
 5
 3
+Keyboard_Switches
+SW_MX_LowProfile_Kailh_Choc_V1V2_THT_Hybrid
+Compatible with Cherry MX Low Profile, Kailh Choc V1 (PG1350) and Choc V2 (PG1353) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
+switch, low_profile
+0
+3
+2
 L9110
 L9110
 
@@ -64091,6 +64119,13 @@ L9110
 0
 10
 10
+LCD_TFT_ST7789
+LCD_TFT_1.3_inches_ST7789
+
+
+0
+11
+7
 LED_SMD
 LED-APA102-2020
 http://www.led-color.com/upload/201604/APA102-2020%20SMD%20LED.pdf
@@ -97040,6 +97075,13 @@ igbt diode module
 0
 25
 25
+USB_Type_C
+USB_Type_C_6P
+
+
+0
+10
+7
 Valve
 Valve_ECC-83-1
 Valve ECC-83-1 round pins
