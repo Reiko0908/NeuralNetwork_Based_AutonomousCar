@@ -1,13 +1,14 @@
 #ifndef VL53L0X_h
 #define VL53L0X_h
 
-#include "freertos/FreeRTOS.h"
+#include <stdio.h>
+#include "driver/i2c.h"
 #include "esp_timer.h"
-#include "freertos/task.h"
 
-#include "../include/I2c_interface.h"
+#include "I2c_interface.h"
 
-#define I2C_VL53L0X_ADDR 0b0101001
+#define ADDRESS_DEFAULT 0b0101001
+// #define ADDRESS_DEFAULT 0x29
 
 class Vl53l0x
 {
@@ -16,11 +17,13 @@ class Vl53l0x
     // MSRC: Minimum Signal Rate Check
     // DSS: Dynamic Spad Selection
 
-    struct SequenceStepEnables{
+    struct SequenceStepEnables
+    {
       bool tcc, msrc, dss, pre_range, final_range;
     };
 
-    struct SequenceStepTimeouts{
+    struct SequenceStepTimeouts
+    {
       uint16_t pre_range_vcsel_period_pclks, final_range_vcsel_period_pclks;
 
       uint16_t msrc_dss_tcc_mclks, pre_range_mclks, final_range_mclks;
@@ -28,9 +31,8 @@ class Vl53l0x
     };
 
     // TwoWire * bus;
-    I2c_sensor_interface i2c_interface;
+    I2c_sensor_interface esp_i2c;
 
-    uint8_t address;
     uint16_t io_timeout;
     bool did_timeout;
     uint16_t timeout_start_ms;
@@ -51,7 +53,9 @@ class Vl53l0x
     static uint32_t timeoutMicrosecondsToMclks(uint32_t timeout_period_us, uint8_t vcsel_period_pclks);
 
   public:
-    enum regAddr{
+    // register addresses from API vl53l0x_device.h (ordered as listed there)
+    enum regAddr
+    {
       SYSRANGE_START                              = 0x00,
 
       SYSTEM_THRESH_HIGH                          = 0x0C,
@@ -60,7 +64,6 @@ class Vl53l0x
       SYSTEM_SEQUENCE_CONFIG                      = 0x01,
       SYSTEM_RANGE_CONFIG                         = 0x09,
       SYSTEM_INTERMEASUREMENT_PERIOD              = 0x04,
-
 
       SYSTEM_INTERRUPT_CONFIG_GPIO                = 0x0A,
 
@@ -142,17 +145,10 @@ class Vl53l0x
 
     Vl53l0x();
 
-    void init_i2c(i2c_master_bus_handle_t *bus_handler, uint32_t clk_freq){
-      this->address = I2C_VL53L0X_ADDR;
-      this->io_timeout = 0;
-      this->did_timeout = false;
-      this->i2c_interface.init(bus_handler, I2C_VL53L0X_ADDR, clk_freq);
-    }
-
     void setAddress(uint8_t new_addr);
-    inline uint8_t getAddress() { return address; }
+    inline uint8_t getAddress() { return this->esp_i2c.address; }
 
-    bool init(bool io_2v8 = true);
+    bool init(i2c_port_t port, bool io_2v8 = true);
 
     void writeReg(uint8_t reg, uint8_t value);
     void writeReg16Bit(uint8_t reg, uint16_t value);
@@ -178,14 +174,9 @@ class Vl53l0x
     uint16_t readRangeContinuousMillimeters();
     uint16_t readRangeSingleMillimeters();
 
-    inline void setTimeout(uint16_t timeout) {
-      this->io_timeout = timeout;
-    }
-    inline uint16_t getTimeout(){
-      return this->io_timeout;
-    }
+    inline void setTimeout(uint16_t timeout) { io_timeout = timeout; }
+    inline uint16_t getTimeout() { return io_timeout; }
     bool timeoutOccurred();
-
 };
 
 #endif

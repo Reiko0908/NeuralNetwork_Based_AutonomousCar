@@ -5,3 +5,5 @@ idf_component_register(
     ${SOURCES}
   INCLUDE_DIRS "include"
 )
+
+idf_build_set_property(COMPILE_OPTIONS "-O2" APPEND)

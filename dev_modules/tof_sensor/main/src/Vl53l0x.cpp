@@ -5,11 +5,6 @@
 
 #include "../include/Vl53l0x.h"
 
-// Defines /////////////////////////////////////////////////////////////////////
-
-// The Arduino two-wire interface uses a 7-bit number for the address,
-// and sets the last bit correctly based on reads and writes
-
 // Record the current time to check an upcoming timeout against
 #define startTimeout() (timeout_start_ms = esp_timer_get_time() / 1000)
 
@@ -32,19 +27,18 @@
 
 // Constructors ////////////////////////////////////////////////////////////////
 
-// VL53L0X::VL53L0X()
-//   : bus(&Wire)
-//   , address(I2C_VL53L0X_ADDR)
-//   , io_timeout(0) // no timeout
-//   , did_timeout(false)
-// {}
+Vl53l0x::Vl53l0x(){
+  this->esp_i2c.address = ADDRESS_DEFAULT;
+  this->io_timeout = 0;
+  this->did_timeout = false;
+}
 
 // Public Methods //////////////////////////////////////////////////////////////
 
 void Vl53l0x::setAddress(uint8_t new_addr)
 {
   writeReg(I2C_SLAVE_DEVICE_ADDRESS, new_addr & 0x7F);
-  address = new_addr;
+  this->esp_i2c.address = new_addr;
 }
 
 // Initialize sensor using sequence based on VL53L0X_DataInit(),
@@ -55,10 +49,12 @@ void Vl53l0x::setAddress(uint8_t new_addr)
 // enough unless a cover glass is added.
 // If io_2v8 (optional) is true or not given, the sensor is configured for 2V8
 // mode.
-bool Vl53l0x::init(bool io_2v8)
-{
+bool Vl53l0x::init(i2c_port_t port, bool io_2v8 ){
+  this->esp_i2c.init(ADDRESS_DEFAULT, port);
+
   // check model ID register (value specified in datasheet)
-  if (readReg(IDENTIFICATION_MODEL_ID) != 0xEE) { return false; }
+  // if (readReg(IDENTIFICATION_MODEL_ID) != 0xEE) { return false; }
+  readReg(IDENTIFICATION_MODEL_ID);
 
   // VL53L0X_DataInit() begin
 
@@ -282,44 +278,27 @@ bool Vl53l0x::init(bool io_2v8)
 // Write an 8-bit register
 void Vl53l0x::writeReg(uint8_t reg, uint8_t value)
 {
-  // bus->beginTransmission(address);
-  // bus->write(reg);
-  // bus->write(value);
-  // last_status = bus->endTransmission();
-  this->i2c_interface.write_reg_single(reg, value);
+  this->esp_i2c.write_reg_single(reg, value);
 }
 
 // Write a 16-bit register
 void Vl53l0x::writeReg16Bit(uint8_t reg, uint16_t value)
 {
-  // bus->beginTransmission(address);
-  // bus->write(reg);
-  // bus->write((uint8_t)(value >> 8)); // value high byte
-  // bus->write((uint8_t)(value)); // value low byte
-  // last_status = bus->endTransmission();
-
   uint8_t first_byte = value >> 8,
           second_byte = value & 0xff;
   uint8_t buf[2] = {first_byte, second_byte};
-  this->i2c_interface.write_reg_multi(reg, buf, 2);
+  this->esp_i2c.write_reg_multi(reg, buf, 2);
 }
 
 // Write a 32-bit register
 void Vl53l0x::writeReg32Bit(uint8_t reg, uint32_t value)
 {
-  // bus->beginTransmission(address);
-  // bus->write(reg);
-  // bus->write((uint8_t)(value >> 24)); // value highest byte
-  // bus->write((uint8_t)(value >> 16));
-  // bus->write((uint8_t)(value >>  8));
-  // bus->write((uint8_t)(value));       // value lowest byte
-  // last_status = bus->endTransmission();
-  uint8_t first_byte = value >> 24,
+  uint8_t first_byte = value >> 24 & 0xff,
           second_byte = value >> 16 & 0xff,
           third_byte = value >> 8 & 0xff,
           fourth_byte = value & 0xff;
   uint8_t buf[4] = {first_byte, second_byte, third_byte, fourth_byte};
-  this->i2c_interface.write_reg_multi(reg, buf, 4);
+  this->esp_i2c.write_reg_multi(reg, buf, 4);
 }
 
 // Read an 8-bit register
@@ -327,14 +306,7 @@ uint8_t Vl53l0x::readReg(uint8_t reg)
 {
   uint8_t value;
 
-  // bus->beginTransmission(address);
-  // bus->write(reg);
-  // last_status = bus->endTransmission();
-  //
-  // bus->requestFrom(address, (uint8_t)1);
-  // value = bus->read();
-  //
-  this->i2c_interface.read_reg_single(reg, &value);
+  this->esp_i2c.read_reg_single(reg, &value);
 
   return value;
 }
@@ -344,17 +316,10 @@ uint16_t Vl53l0x::readReg16Bit(uint8_t reg)
 {
   uint16_t value;
 
-  // bus->beginTransmission(address);
-  // bus->write(reg);
-  // last_status = bus->endTransmission();
-  //
-  // bus->requestFrom(address, (uint8_t)2);
-  // value  = (uint16_t)bus->read() << 8; // value high byte
-  // value |=           bus->read();      // value low byte
-
   uint8_t buf[2];
-  this->i2c_interface.read_reg_multi(reg, buf, 2);
+  this->esp_i2c.read_reg_multi(reg, buf, 2);
   value = ((uint16_t)buf[0] << 8) | buf[1];
+
   return value;
 }
 
@@ -362,59 +327,25 @@ uint16_t Vl53l0x::readReg16Bit(uint8_t reg)
 uint32_t Vl53l0x::readReg32Bit(uint8_t reg)
 {
   uint32_t value;
-
-  // bus->beginTransmission(address);
-  // bus->write(reg);
-  // last_status = bus->endTransmission();
-  //
-  // bus->requestFrom(address, (uint8_t)4);
-  // value  = (uint32_t)bus->read() << 24; // value highest byte
-  // value |= (uint32_t)bus->read() << 16;
-  // value |= (uint16_t)bus->read() <<  8;
-  // value |=           bus->read();       // value lowest byte
-
   uint8_t buf[4];
-  this->i2c_interface.read_reg_multi(reg, buf, 4);
-  value  = (uint32_t)buf[0] << 24; // value highest byte
-  value |= (uint32_t)buf[1] << 16;
-  value |= (uint16_t)buf[2] <<  8;
-  value |=           buf[3];       // value lowest byte
+  this->esp_i2c.read_reg_multi(reg, buf, 4);
+  value = ((uint32_t)buf[0] << 24) | ((uint32_t)buf[1] << 16) | ((uint16_t)buf[2] << 8) | buf[3];
 
   return value;
 }
 
 // Write an arbitrary number of bytes from the given array to the sensor,
 // starting at the given register
-// void VL53L0X::writeMulti(uint8_t reg, uint8_t const * src, uint8_t count)
 void Vl53l0x::writeMulti(uint8_t reg, uint8_t * src, uint8_t count)
 {
-  // bus->beginTransmission(address);
-  // bus->write(reg);
-  //
-  // while (count-- > 0)
-  // {
-  //   bus->write(*(src++));
-  // }
-  //
-  // last_status = bus->endTransmission();
-  this->i2c_interface.write_reg_multi(reg, src, count);
+  this->esp_i2c.write_reg_multi(reg, src, count);
 }
 
 // Read an arbitrary number of bytes from the sensor, starting at the given
 // register, into the given array
 void Vl53l0x::readMulti(uint8_t reg, uint8_t * dst, uint8_t count)
 {
-  // bus->beginTransmission(addreUs);
-  // bus->write(reg);
-  // last_status = bus->endTransmission();
-  //
-  // bus->requestFrom(address, count);
-  //
-  // while (count-- > 0)
-  // {
-  //   *(dst++) = bus->read();
-  // }
-  this->i2c_interface.read_reg_multi(reg, dst, count);
+  this->esp_i2c.read_reg_multi(reg, dst, count);
 }
 
 // Set the return signal rate limit check value in units of MCPS (mega counts
