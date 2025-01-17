@@ -3,10 +3,9 @@
 
 #include "Vec3.h"
 #include "I2c_interface.h" // for further code reusable, not just on Arduino Platform
-#include "driver/i2c_types.h"
 #include "freertos/FreeRTOS.h"
-#include "esp_timer.h"
 #include "freertos/task.h"
+#include "esp_timer.h"
 
 // ----- LIBRARY CONSTANTS ---------------------------------------------------------------------
 #define NUM_CALIB_SAMPLES 50
@@ -128,7 +127,6 @@ class Gy87{
     void update_acc_reading();
     void update_gyro_reading();
     void update_mag_reading();
-    // void update_gyro_z_reading();
 
     void calib_gyro();
     void calib_acc();
@@ -147,8 +145,7 @@ class Gy87{
     Vec3<float> acc, gyro, mag;
 
   public: //funcs
-    Gy87(bool gyro_enable, bool acc_enable, bool mag_enable);    void init_i2c(i2c_master_dev_handle_t *device_handler_ptr);
-    void init_i2c(i2c_master_bus_handle_t *bus_handler, uint32_t clk_freq);
+    Gy87(bool gyro_enable, bool acc_enable, bool mag_enable);
     void config(
         int dlpf_config = 0,
         int acc_afs_sel = 0,

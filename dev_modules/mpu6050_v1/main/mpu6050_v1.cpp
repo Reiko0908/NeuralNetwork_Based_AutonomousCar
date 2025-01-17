@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "driver/i2c_master.h"
-#include "driver/i2c_types.h"
+#include "driver/i2c.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -8,24 +7,21 @@
 
 extern "C" void app_main(void)
 {
-  i2c_master_bus_config_t i2c_bus_config = {
-    .i2c_port = I2C_NUM_0,
-    .sda_io_num = GPIO_NUM_8,
-    .scl_io_num = GPIO_NUM_18,
-    .clk_source = I2C_CLK_SRC_DEFAULT,
-    .glitch_ignore_cnt = 7,
-    .intr_priority = 0,
-    .trans_queue_depth = 64,
-    .flags = {
-      .enable_internal_pullup = true
-    }
+  i2c_config_t i2c_bus_config = {
+    .mode = I2C_MODE_MASTER,
+    .sda_io_num = GPIO_NUM_18,
+    .scl_io_num = GPIO_NUM_8,
+    .sda_pullup_en = true,
+    .scl_pullup_en = true,
+    .master = {
+      .clk_speed = 100000
+    },
+    .clk_flags = I2C_SCLK_SRC_FLAG_FOR_NOMAL
   };
-  i2c_master_bus_handle_t i2c_bus_handler;
-  i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handler);
-
+  i2c_param_config(I2C_NUM_0, &i2c_bus_config);
+  i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0);
 
   Gy87 imu(true, true, false);
-  imu.init_i2c(&i2c_bus_handler, 100000);
 
   imu.config(
     DLPF_ACC_44HZ_GYRO_42HZ,
@@ -44,16 +40,46 @@ extern "C" void app_main(void)
   }
 }
 
-  // i2c_device_config_t i2c_device_config = {
-  //   .dev_addr_length = I2C_ADDR_BIT_LEN_7,
-  //   .device_address = 0x68,
-  //   .scl_speed_hz = 100000,
-  //   .flags = {
-  //     .disable_ack_check = false
-  //   }
-  // };
-  // i2c_master_dev_handle_t device_handler;
-  // i2c_master_bus_add_device(i2c_bus_handler, &i2c_device_config, &device_handler);
-
-  // Gy87 imu(true, true, false);
-  // imu.init_i2c(&device_handler);
+// #include <stdio.h>
+// #include "driver/i2c.h"
+// #include "freertos/FreeRTOS.h"
+// #include "freertos/task.h"
+//
+// extern "C" void app_main(void)
+// {
+//   i2c_config_t i2c_config = {
+//     .mode = I2C_MODE_MASTER,
+//     .sda_io_num = GPIO_NUM_18,
+//     .scl_io_num = GPIO_NUM_8,
+//     .sda_pullup_en = GPIO_PULLUP_ENABLE,
+//     .scl_pullup_en = GPIO_PULLUP_ENABLE,
+//     .master ={
+//       .clk_speed = 100000
+//     }
+//   };
+//
+//   i2c_param_config(I2C_NUM_0, &i2c_config);
+//   i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0);
+//
+//   uint8_t write_buffer = 0x75;
+//   uint8_t read_buffer;
+//
+//   // Add a delay before the first read
+//   vTaskDelay(1000 / portTICK_PERIOD_MS);
+//
+//   while(true){
+//     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+//     i2c_master_start(cmd);
+//     i2c_master_write_byte(cmd, (0x68 << 1) | I2C_MASTER_WRITE, true);
+//     i2c_master_write_byte(cmd, write_buffer, true);
+//     i2c_master_start(cmd);
+//     i2c_master_write_byte(cmd, (0x68 << 1) | I2C_MASTER_READ, true);
+//     i2c_master_read_byte(cmd, &read_buffer, I2C_MASTER_LAST_NACK);
+//     i2c_master_stop(cmd);
+//     i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_PERIOD_MS);
+//     i2c_cmd_link_delete(cmd);
+//
+//     printf("%d\n", read_buffer);
+//     vTaskDelay(200 / portTICK_PERIOD_MS);
+//   }
+// }

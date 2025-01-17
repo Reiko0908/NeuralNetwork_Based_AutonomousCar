@@ -5,13 +5,9 @@ Gy87::Gy87(bool gyro_enable, bool acc_enable, bool mag_enable){
   this->acc_enable = acc_enable; 
   this->mag_enable = mag_enable; 
   this->calibrated = false;
-}
 
-void Gy87::init_i2c(i2c_master_bus_handle_t *bus_handler, uint32_t clk_freq){
-  if(this->gyro_enable or this->acc_enable)
-    this->mpu6050.init(bus_handler, I2C_MPU6050_ADDR, clk_freq);
-  if(this->mag_enable)
-    this->hmc5883l.init(bus_handler, I2C_HMC5883L_ADDR, clk_freq);
+  this->mpu6050.init(I2C_MPU6050_ADDR, I2C_NUM_0);
+  this->hmc5883l.init(I2C_HMC5883L_ADDR, I2C_NUM_0);
 }
 
 void Gy87::config(

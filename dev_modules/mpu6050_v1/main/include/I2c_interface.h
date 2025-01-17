@@ -1,38 +1,67 @@
 #ifndef ESP_IDF_I2C_INTERFACE_H
 #define ESP_IDF_I2C_INTERFACE_H
 
-#include "driver/i2c_master.h"
-#include "driver/i2c_types.h"
-#include <cstdint>
+#include "driver/i2c.h"
+
+#define I2C_MAX_WRITE_LEN 64
 
 class I2c_sensor_interface{
-  public:
-    i2c_master_dev_handle_t device_handler;
+  private:
+    uint8_t address;
+    i2c_port_t i2c_port;
 
   public:
-    void init(i2c_master_bus_handle_t *bus_handler, uint8_t addr, uint32_t clk_freq){
-      i2c_device_config_t i2c_device_config = {
-        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
-        .device_address = addr,
-        .scl_speed_hz = clk_freq,
-        .flags = {
-          .disable_ack_check = false
-        }
-      };
-      i2c_master_bus_add_device(*bus_handler, &i2c_device_config, &this->device_handler);
+    void init(uint8_t addr, i2c_port_t port){
+      this->address = addr;
+      this->i2c_port = port;
     }
 
     void read_reg_single(uint8_t reg, uint8_t *data_out){
-      i2c_master_transmit_receive(this->device_handler, &reg, 1, data_out, 1, -1);
+      i2c_cmd_handle_t cmd_handler = i2c_cmd_link_create();
+      i2c_master_start(cmd_handler);
+      i2c_master_write_byte(cmd_handler, (this->address << 1) | I2C_MASTER_WRITE, true);
+      i2c_master_write_byte(cmd_handler, reg, true);
+      i2c_master_start(cmd_handler);
+      i2c_master_write_byte(cmd_handler, (this->address << 1) | I2C_MASTER_READ, true);
+      i2c_master_read_byte(cmd_handler, data_out, I2C_MASTER_LAST_NACK);
+      i2c_master_stop(cmd_handler);
+      i2c_master_cmd_begin(this->i2c_port, cmd_handler, 1000);
+      i2c_cmd_link_delete(cmd_handler);
     }
 
     void read_reg_multi(uint8_t start_reg, uint8_t *data_out, uint8_t len){
-      i2c_master_transmit_receive(this->device_handler, &start_reg, 1, data_out, len, -1);
+      i2c_cmd_handle_t cmd_handler = i2c_cmd_link_create();
+      i2c_master_start(cmd_handler);
+      i2c_master_write_byte(cmd_handler, (this->address << 1) | I2C_MASTER_WRITE, true);
+      i2c_master_write_byte(cmd_handler, start_reg, true);
+      i2c_master_start(cmd_handler);
+      i2c_master_write_byte(cmd_handler, (this->address << 1) | I2C_MASTER_READ, true);
+      i2c_master_read(cmd_handler, data_out, len, I2C_MASTER_LAST_NACK);
+      i2c_master_stop(cmd_handler);
+      i2c_master_cmd_begin(this->i2c_port, cmd_handler, 1000);
+      i2c_cmd_link_delete(cmd_handler);
     }
 
     void write_reg_single(uint8_t reg, uint8_t data){
-      uint8_t tx_buf[2] = {reg, data};
-      ESP_ERROR_CHECK(i2c_master_transmit(this->device_handler, tx_buf, 2, -1));
+      i2c_cmd_handle_t cmd_handler = i2c_cmd_link_create();
+      i2c_master_start(cmd_handler);
+      i2c_master_write_byte(cmd_handler, (this->address << 1) | I2C_MASTER_WRITE, true);
+      i2c_master_write_byte(cmd_handler, reg, true);
+      i2c_master_write_byte(cmd_handler, data, true);
+      i2c_master_stop(cmd_handler);
+      i2c_master_cmd_begin(this->i2c_port, cmd_handler, 1000);
+      i2c_cmd_link_delete(cmd_handler);
+    }
+
+    void write_reg_multi(uint8_t start_reg, uint8_t *data_in, uint8_t len){
+      i2c_cmd_handle_t cmd_handler = i2c_cmd_link_create();
+      i2c_master_start(cmd_handler);
+      i2c_master_write_byte(cmd_handler, (this->address << 1) | I2C_MASTER_WRITE, true);
+      i2c_master_write_byte(cmd_handler, start_reg, true);
+      i2c_master_write(cmd_handler, data_in, len, true);
+      i2c_master_stop(cmd_handler);
+      i2c_master_cmd_begin(this->i2c_port, cmd_handler, 1000);
+      i2c_cmd_link_delete(cmd_handler);
     }
 };
 
