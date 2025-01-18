@@ -3,13 +3,13 @@
 #include "driver/i2c.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-
+#define FILTER_SIZE 5
 extern "C" void app_main(void)
 {
   i2c_config_t i2c_config = {
     .mode = I2C_MODE_MASTER,
-    .sda_io_num = GPIO_NUM_18,
-    .scl_io_num = GPIO_NUM_8,
+    .sda_io_num = GPIO_NUM_5,
+    .scl_io_num = GPIO_NUM_4,
     .sda_pullup_en = GPIO_PULLUP_ENABLE,
     .scl_pullup_en = GPIO_PULLUP_ENABLE,
     .master = {
@@ -32,19 +32,27 @@ extern "C" void app_main(void)
   tof.setVcselPulsePeriod(Vl53l0x::VcselPeriodPreRange, 18);
   tof.setVcselPulsePeriod(Vl53l0x::VcselPeriodFinalRange, 14);
 
-  tof.setMeasurementTimingBudget(20000);
+  tof.setMeasurementTimingBudget(10000);
+  uint16_t buffer[FILTER_SIZE];
+  int index = 0;
 
-  uint16_t data;
+  while (true) {
+    buffer[index] = tof.readRangeSingleMillimeters();
+    index = (index + 1) % FILTER_SIZE;
 
-  while(true){
-    data = tof.readRangeSingleMillimeters();
+    // Calculate average
+    uint32_t sum = 0;
+    for (int i = 0; i < FILTER_SIZE; i++) {
+      sum += buffer[i];
+    }
+    uint16_t filteredData = sum / FILTER_SIZE;
 
     if (tof.timeoutOccurred())
       printf("TIMEOUT\n");
     else
-      printf("%d\n", data);
+      printf("Filtered Distance: %d\n", filteredData);
 
-    vTaskDelay(500 / portTICK_PERIOD_MS);
+    vTaskDelay(200 / portTICK_PERIOD_MS);
   }
 
 }
