@@ -3,10 +3,8 @@
 
 #include "driver/i2c.h"
 
-#define I2C_MAX_WRITE_LEN 64
-
 class I2c_sensor_interface{
-  private:
+  public:
     uint8_t address;
     i2c_port_t i2c_port;
 

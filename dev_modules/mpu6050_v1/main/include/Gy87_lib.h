@@ -5,7 +5,9 @@
 #include "I2c_interface.h" // for further code reusable, not just on Arduino Platform
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_partition.h"
 #include "esp_timer.h"
+#include <cstring>
 
 // ----- LIBRARY CONSTANTS ---------------------------------------------------------------------
 #define NUM_CALIB_SAMPLES 50
@@ -112,6 +114,11 @@
 #define GYRO_DATA_OUTPUT_Z_AXIS_REG 0x47
 #define GYRO_DATA_OUTPUT_Z_AXIS_READ_LEN 2
 
+// #define float2bytes(value, bytes) std::memcpy(bytes, &value, 4)
+// #define bytes2float(bytes, value) std::memcpy(value, bytes, 4)
+void float2bytes(float value, uint8_t* bytes);
+void bytes2float(uint8_t* bytes, float* value);
+
 class Gy87{
   private: //variables
     float acc_division_factor, gyro_division_factor, mag_division_factor;
@@ -120,7 +127,8 @@ class Gy87{
                 gyro_offset,
                 mag_hard_iron;
     float mag_soft_iron[3][3];
-    bool calibrated;
+    bool calibrated, flash_initiated;
+    const esp_partition_t *partition;
 
   public:
     I2c_sensor_interface mpu6050, hmc5883l;
@@ -146,6 +154,8 @@ class Gy87{
 
   public: //funcs
     Gy87(bool gyro_enable, bool acc_enable, bool mag_enable);
+    void init_i2c(i2c_port_t port);
+    void init_flash(const esp_partition_t *partition);
     void config(
         int dlpf_config = 0,
         int acc_afs_sel = 0,
