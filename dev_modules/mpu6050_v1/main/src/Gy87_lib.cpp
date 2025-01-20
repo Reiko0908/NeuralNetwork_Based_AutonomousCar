@@ -1,13 +1,15 @@
 #include "Gy87_lib.h"
+#include "esp_err.h"
 #include "esp_partition.h"
+#include "freertos/idf_additions.h"
+#include "freertos/projdefs.h"
 
 void float2bytes(float value, uint8_t* bytes){
-
-    std::memcpy(bytes, &value, 4);
+  std::memcpy(bytes, &value, 4);
 }
 
 void bytes2float(uint8_t* bytes, float* value){
-    std::memcpy(value, bytes, 4);
+  std::memcpy(value, bytes, 4);
 }
 
 Gy87::Gy87(bool gyro_enable, bool acc_enable, bool mag_enable){
@@ -160,8 +162,10 @@ void Gy87::update_acc_reading(){
   this->acc.y = (int16_t)((int16_t)buf[2] << 8 | buf[3]);
   this->acc.z = (int16_t)((int16_t)buf[4] << 8 | buf[5]);
   this->acc /= this->acc_division_factor;
-  if(this->calibrated)
+  if(this->calibrated){
     this->acc -= this->acc_offset;
+    this->acc.z -= 1.0;
+  }
 }
 
 void Gy87::update_mag_reading(){
@@ -204,6 +208,7 @@ void Gy87::calib_gyro(){
     gyro_z_sum += this->gyro.z;
   }
 
+  this->calibrated = true;
   this->gyro_offset = {
     (float)(gyro_x_sum / NUM_CALIB_SAMPLES),
     (float)(gyro_y_sum / NUM_CALIB_SAMPLES),
@@ -234,6 +239,7 @@ void Gy87::calib_acc(){
     acc_z_sum += this->acc.z;
   }
 
+  this->calibrated = true;
   this->acc_offset = {
     (float)(acc_x_sum / NUM_CALIB_SAMPLES),
     (float)(acc_y_sum / NUM_CALIB_SAMPLES),
@@ -268,6 +274,7 @@ void Gy87::calib_mag(){
     if(this->mag.z <= reading_min.z) reading_min.z = this->mag.z;
   }
 
+  this->calibrated = true;
   this->mag_hard_iron = (reading_max + reading_min) / 2;
 
   printf("Magnetometer calibrated\n");
@@ -287,10 +294,10 @@ void Gy87::save_gyro_calib_param(){
     printf("Gyroscope is not enabled\n");
     return;
   }
-
-  uint8_t buf[sizeof(float) * 3];
+  uint8_t buf[sizeof(float)*3], test_buf[sizeof(float)*3];
   vec2bytes(this->gyro_offset, buf);
-  esp_partition_write(this->partition, EEPROM_GYRO_OFFSETS_START_REG, buf, sizeof(float) * 3);
+  esp_partition_erase_range(this->partition, PARTITION_GYRO_OFFSETS_START_REG, this->partition->erase_size);
+  esp_partition_write(this->partition, PARTITION_GYRO_OFFSETS_START_REG, buf, sizeof(float)*3);
   printf("Saved gyroscope calibration parameters\n");
 }
 
@@ -299,10 +306,10 @@ void Gy87::save_acc_calib_param(){
     printf("Accelerometer is not enabled\n");
     return;
   }
-
   uint8_t buf[sizeof(float) * 3];
   vec2bytes(this->acc_offset, buf);
-  esp_partition_write(this->partition, EEPROM_ACC_OFFSETS_START_REG, buf, sizeof(float) * 3);
+  esp_partition_erase_range(this->partition, PARTITION_ACC_OFFSETS_START_REG, this->partition->erase_size);
+  esp_partition_write(this->partition, PARTITION_ACC_OFFSETS_START_REG, buf, sizeof(float) * 3);
   printf("Saved accelerometer calibration parameters\n");
 }
 
@@ -314,7 +321,8 @@ void Gy87::save_mag_calib_param(){
 
   uint8_t buf[sizeof(float) * 3];
   vec2bytes(this->mag_hard_iron, buf);
-  esp_partition_write(this->partition, EEPROM_MAG_HARD_IRON_START_REG, buf, sizeof(float) * 3);
+  esp_partition_erase_range(this->partition, PARTITION_MAG_HARD_IRON_START_REG, this->partition->erase_size);
+  esp_partition_write(this->partition, PARTITION_MAG_HARD_IRON_START_REG, buf, sizeof(float) * 3);
   printf("Saved magnetometer calibration parameters\n");
 }
 
@@ -328,23 +336,26 @@ void Gy87::save_calib_param(){
 
 //----LOAD CALIBRATION PARAMETERS PROCEDURES-----------------------------
 void Gy87::load_gyro_calib_param(){
+  this->calibrated = true;
   uint8_t buf[sizeof(float)*3];
-  esp_partition_read(this->partition, EEPROM_GYRO_OFFSETS_START_REG, buf, sizeof(float) * 3);
-  bytes2vec(buf, this->gyro_offset);
+  esp_partition_read(this->partition, PARTITION_GYRO_OFFSETS_START_REG, buf, sizeof(float) * 3);
+  bytes2vec(buf, &this->gyro_offset);
   printf("Gyroscope calibration parameters loaded from memory\n");
 }
 
 void Gy87::load_acc_calib_param(){
+  this->calibrated = true;
   uint8_t buf[sizeof(float)*3];
-  esp_partition_read(this->partition, EEPROM_ACC_OFFSETS_START_REG, buf, sizeof(float) * 3);
-  bytes2vec(buf, this->acc_offset);
+  esp_partition_read(this->partition, PARTITION_ACC_OFFSETS_START_REG, buf, sizeof(float) * 3);
+  bytes2vec(buf, &this->acc_offset);
   printf("Accelerometer calibration parameters loaded from memory\n");
 }
 
 void Gy87::load_mag_calib_param(){
+  this->calibrated = true;
   uint8_t buf[sizeof(float)*3];
-  esp_partition_read(this->partition, EEPROM_MAG_HARD_IRON_START_REG, buf, sizeof(float) * 3);
-  bytes2vec(buf, this->mag_hard_iron);
+  esp_partition_read(this->partition, PARTITION_MAG_HARD_IRON_START_REG, buf, sizeof(float) * 3);
+  bytes2vec(buf, &this->mag_hard_iron);
   printf("Magnetometer calibration parameters loaded from memory\n");
 }
 

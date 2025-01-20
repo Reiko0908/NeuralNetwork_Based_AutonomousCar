@@ -2,7 +2,7 @@
 #define GY87_LIB_H
 
 #include "Vec3.h"
-#include "I2c_interface.h" // for further code reusable, not just on Arduino Platform
+#include "I2c_interface.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_partition.h"
@@ -13,11 +13,11 @@
 #define NUM_CALIB_SAMPLES 50
 #define MAG_CALIB_DURATION_US 10000000
 
-//----- EEPROM CALIBRATION DATA ADDRESSES ------------------------------------------------------------------
-#define EEPROM_GYRO_OFFSETS_START_REG 0x00
-#define EEPROM_ACC_OFFSETS_START_REG 0x12
-#define EEPROM_MAG_HARD_IRON_START_REG 0x24
-#define EEPROM_MAG_SOFT_IRON_START_REG 0x60
+//----- PARTITION CALIBRATION DATA ADDRESSES ------------------------------------------------------------------
+#define PARTITION_GYRO_OFFSETS_START_REG 0x0000
+#define PARTITION_ACC_OFFSETS_START_REG 0x1000 //to fit the partition->erase_size
+#define PARTITION_MAG_HARD_IRON_START_REG 0x2000
+#define PARTITION_MAG_SOFT_IRON_START_REG 0x3000
 
 // ----- I2C ADDRESSES ------------------------------------------------------------------
 #define I2C_MPU6050_ADDR 0x68
@@ -120,7 +120,7 @@ void float2bytes(float value, uint8_t* bytes);
 void bytes2float(uint8_t* bytes, float* value);
 
 class Gy87{
-  private: //variables
+  public: //variables
     float acc_division_factor, gyro_division_factor, mag_division_factor;
     bool gyro_enable, acc_enable, mag_enable;
     Vec3<float> acc_offset,

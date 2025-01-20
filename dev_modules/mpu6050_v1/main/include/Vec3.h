@@ -2,6 +2,7 @@
 #define VEC3_H
 
 #include <cstring>
+#include <stdio.h>
 
 template<typename T>
 class Vec3 {
@@ -86,11 +87,11 @@ void vec2bytes(const Vec3<T>& vec, uint8_t* bytes) {
 }
 
 template<typename T>
-void bytes2vec(const uint8_t* bytes, Vec3<T>& vec){
+void bytes2vec(const uint8_t* bytes, Vec3<T>* vec){
   size_t type_size = sizeof(T);
-  std::memcpy(&vec.x, bytes + type_size * 0, type_size);
-  std::memcpy(&vec.y, bytes + type_size * 1, type_size);
-  std::memcpy(&vec.z, bytes + type_size * 2, type_size);
+  std::memcpy(&vec->x, bytes + type_size * 0, type_size);
+  std::memcpy(&vec->y, bytes + type_size * 1, type_size);
+  std::memcpy(&vec->z, bytes + type_size * 2, type_size);
 }
 
 #endif
