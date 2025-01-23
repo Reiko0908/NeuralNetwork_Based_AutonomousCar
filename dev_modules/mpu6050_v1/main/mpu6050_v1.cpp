@@ -38,14 +38,17 @@ extern "C" void app_main(void)
     MAG_FIELD_RANGE_1P3_GA,
     MAG_MODE_CONTINUOUS_MEASUREMENT
   );
-  // imu.calib_gyro();
-  // imu.save_gyro_calib_param();
-  imu.load_gyro_calib_param();
-  
+  imu.calib_gyro();
+  imu.save_gyro_calib_param();
+  imu.calib_acc();
+  imu.save_acc_calib_param();
+
+  imu.load_gyro_calib_param();  
+  imu.load_acc_calib_param();
 
   while(true){
     imu.update_reading();
-    printf("%f5 %f5 %f5\n", imu.gyro.x, imu.gyro.y, imu.gyro.z);
+    printf("%.5f %.5f %.5f\n", imu.gyro.x, imu.gyro.y, imu.gyro.z);
     vTaskDelay(200 / portTICK_PERIOD_MS);
   }
 }

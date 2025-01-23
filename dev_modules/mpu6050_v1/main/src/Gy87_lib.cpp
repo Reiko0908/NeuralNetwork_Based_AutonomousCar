@@ -294,7 +294,7 @@ void Gy87::save_gyro_calib_param(){
     printf("Gyroscope is not enabled\n");
     return;
   }
-  uint8_t buf[sizeof(float)*3], test_buf[sizeof(float)*3];
+  uint8_t buf[sizeof(float)*3];
   vec2bytes(this->gyro_offset, buf);
   esp_partition_erase_range(this->partition, PARTITION_GYRO_OFFSETS_START_REG, this->partition->erase_size);
   esp_partition_write(this->partition, PARTITION_GYRO_OFFSETS_START_REG, buf, sizeof(float)*3);
