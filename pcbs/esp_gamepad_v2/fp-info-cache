@@ -1,4 +1,4 @@
-24180846488277635
+24200016967303591
 Arduino_pro_mini
 Arduino_pro_mini
 
@@ -6450,6 +6450,13 @@ Capacitor_Tantalum_SMD
 CP_EIA-7361-438_AVX-U_Pad2.18x3.30mm_HandSolder
 Tantalum Capacitor SMD AVX-U (7361-438 Metric), IPC_7351 nominal, (Body size from: http://datasheets.avx.com/NOS.pdf), generated with kicad-footprint-generator
 capacitor tantalum
+0
+2
+2
+Coin_Vibration_Motor
+XDCR_C0720B001F
+
+
 0
 2
 2
@@ -97874,49 +97881,119 @@ Varistor VF
 2
 2
 XH_2p54
-XH_2p54_2P_male
+2P_male
 
 
 0
 2
 2
 XH_2p54
-XH_2p54_3P_male
+3P_male
 
 
 0
 3
 3
 XH_2p54
-XH_2p54_4P_male
+4P_male
 
 
 0
 4
 4
 XH_2p54
-XH_2p54_6P_male
+6P_male
 
 
 0
 6
 6
 XH_2p54
-XH_2p54_7P_male
+7P_male
 
 
 0
 7
 7
 XH_2p54
-XH_2p54_8P_male
+8P_male
 
 
 0
 8
 8
 XH_2p54
-XH_2p54_9P_male
+9P_male
+
+
+0
+9
+9
+YH_2p00
+2P_male_horizontal_tht
+
+
+0
+2
+2
+YH_2p00
+2p_male_horizontal_smd
+
+
+0
+4
+2
+YH_2p00
+3P_male_horizontal_tht
+
+
+0
+3
+3
+YH_2p00
+4P_male_horizontal_tht
+
+
+0
+4
+4
+YH_2p00
+4p_male_horizontal_smd
+
+
+0
+6
+4
+YH_2p00
+5P_male_horizontal_tht
+
+
+0
+5
+5
+YH_2p00
+6P_male_horizontal_tht
+
+
+0
+6
+6
+YH_2p00
+7P_male_horizontal_tht
+
+
+0
+7
+7
+YH_2p00
+8P_male_horizontal_tht
+
+
+0
+8
+8
+YH_2p00
+9P_male_horizontal_tht
 
 
 0
