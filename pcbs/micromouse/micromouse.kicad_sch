@@ -4333,6 +4333,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 114.3) (xy 187.96 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a5c4e7a-a9ad-4321-8579-65bfcfdc79cb")
+	)
+	(wire
+		(pts
 			(xy 140.97 31.75) (xy 153.67 31.75)
 		)
 		(stroke
@@ -4770,6 +4780,16 @@
 			(type default)
 		)
 		(uuid "62f83620-8dd6-4e23-a05e-644a62d2f6a8")
+	)
+	(wire
+		(pts
+			(xy 138.43 114.3) (xy 151.13 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6441a429-28ef-44db-8526-c4150d55e23c")
 	)
 	(wire
 		(pts
@@ -5333,6 +5353,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 96.52) (xy 151.13 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1d4af0b-5c7b-49ac-9b05-2d98b7ec43c2")
+	)
+	(wire
+		(pts
 			(xy 173.99 106.68) (xy 173.99 109.22)
 		)
 		(stroke
@@ -5893,6 +5923,16 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 96.52) (xy 172.72 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb6abc76-51e2-4da4-8f18-a4183d5e9396")
+	)
+	(wire
+		(pts
 			(xy 214.63 58.42) (xy 214.63 63.5)
 		)
 		(stroke
@@ -5953,18 +5993,7 @@
 		)
 		(uuid "0ff917b8-b305-49f1-a767-a21118d93b73")
 	)
-	(text "WHEELS"
-		(exclude_from_sim no)
-		(at 76.962 139.954 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-				(thickness 0.1588)
-			)
-		)
-		(uuid "10ed72ab-ef4b-4426-915c-c7de51f1b443")
-	)
-	(text "MOUNTING HOLES"
+	(text "WHEEL MOUNTING HOLES"
 		(exclude_from_sim no)
 		(at 68.58 134.62 0)
 		(effects
@@ -5987,17 +6016,6 @@
 			)
 		)
 		(uuid "22e69239-8455-429d-976f-01c60ea60312")
-	)
-	(text "MOTOR"
-		(exclude_from_sim no)
-		(at 57.658 139.954 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-				(thickness 0.1588)
-			)
-		)
-		(uuid "3eb1c57b-d462-4be0-a870-f784eeb578de")
 	)
 	(text "BATTERY READING"
 		(exclude_from_sim no)
@@ -6049,7 +6067,6 @@
 	)
 	(label "RGB"
 		(at 55.88 99.06 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6061,7 +6078,6 @@
 	)
 	(label "3V3"
 		(at 234.95 53.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6070,9 +6086,18 @@
 		)
 		(uuid "01a75ba7-b86e-4c28-a996-e9ffdcc8a11a")
 	)
+	(label "5V"
+		(at 138.43 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "067ce40b-706d-4a69-b5e2-70f96c99245b")
+	)
 	(label "SDA"
 		(at 234.95 60.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6083,7 +6108,6 @@
 	)
 	(label "BAT_ADC"
 		(at 110.49 143.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6094,7 +6118,6 @@
 	)
 	(label "SCL"
 		(at 55.88 104.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6105,7 +6128,6 @@
 	)
 	(label "3V3"
 		(at 83.82 97.79 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6116,7 +6138,6 @@
 	)
 	(label "6V"
 		(at 146.05 116.84 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6125,9 +6146,18 @@
 		)
 		(uuid "2770f9e3-4183-4e98-9355-7e77172cbae2")
 	)
+	(label "5V"
+		(at 185.42 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "28706f73-df74-41ff-9085-93aa690a70f1")
+	)
 	(label "6V"
 		(at 118.11 30.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6138,7 +6168,6 @@
 	)
 	(label "PWM_A"
 		(at 147.32 93.98 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6150,7 +6179,6 @@
 	)
 	(label "5V"
 		(at 118.11 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6161,7 +6189,6 @@
 	)
 	(label "5V"
 		(at 180.34 125.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6172,7 +6199,6 @@
 	)
 	(label "BUTTON"
 		(at 176.53 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6183,7 +6209,6 @@
 	)
 	(label "5V"
 		(at 173.99 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6194,7 +6219,6 @@
 	)
 	(label "VBAT"
 		(at 38.1 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6205,7 +6229,6 @@
 	)
 	(label "SCL"
 		(at 234.95 58.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6216,7 +6239,6 @@
 	)
 	(label "3V3"
 		(at 153.67 29.21 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6227,7 +6249,6 @@
 	)
 	(label "RGB"
 		(at 135.89 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6239,7 +6260,6 @@
 	)
 	(label "3V3"
 		(at 148.59 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6250,7 +6270,6 @@
 	)
 	(label "BAT_ADC"
 		(at 55.88 109.22 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6261,7 +6280,6 @@
 	)
 	(label "VBAT"
 		(at 115.57 134.62 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6272,7 +6290,6 @@
 	)
 	(label "SDA"
 		(at 55.88 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6283,7 +6300,6 @@
 	)
 	(label "3V3"
 		(at 181.61 30.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6294,7 +6310,6 @@
 	)
 	(label "PWM_A"
 		(at 55.88 111.76 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6306,7 +6321,6 @@
 	)
 	(label "5V"
 		(at 93.98 87.63 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6317,7 +6331,6 @@
 	)
 	(label "PWM_B"
 		(at 173.99 121.92 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6329,7 +6342,6 @@
 	)
 	(label "PWM_B"
 		(at 55.88 114.3 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6341,7 +6353,6 @@
 	)
 	(label "BUTTON"
 		(at 55.88 101.6 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6377,7 +6388,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
 			(at 81.28 38.1 0)
 			(effects
 				(font
@@ -6556,17 +6567,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 71.12 146.05 0)
+		(lib_id "Device:R_US")
+		(at 187.96 118.11 0)
+		(mirror x)
 		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
+		(exclude_from_sim no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "17d7d1ba-2b08-4fc5-bc4c-bc82821c9189")
-		(property "Reference" "H3"
-			(at 73.66 144.7799 0)
+		(uuid "1769050e-c02a-49e5-aa5e-0d59e68ad0c4")
+		(property "Reference" "R11"
+			(at 190.5 119.3801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6574,8 +6585,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "M2"
-			(at 73.66 147.3199 0)
+		(property "Value" "10K"
+			(at 190.5 116.8401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6583,8 +6594,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 71.12 146.05 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 188.976 117.856 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6593,7 +6604,77 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 71.12 146.05 0)
+			(at 187.96 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 187.96 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "77aa3029-0245-4a00-85d1-250e2e5e4d7e")
+		)
+		(pin "2"
+			(uuid "090bf81d-7531-4649-a58f-ce80af3df93e")
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 64.77 140.97 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "17d7d1ba-2b08-4fc5-bc4c-bc82821c9189")
+		(property "Reference" "H3"
+			(at 67.31 139.6999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2"
+			(at 67.31 142.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6602,7 +6683,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 71.12 146.05 0)
+			(at 64.77 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6781,7 +6862,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X:VL53L0X_vertical"
+		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
 			(at 235.712 124.968 0)
 			(effects
 				(font
@@ -6856,7 +6937,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
 			(at 114.3 38.1 0)
 			(effects
 				(font
@@ -7039,7 +7120,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_CK_RS282G05A3"
 			(at 189.23 35.56 0)
 			(effects
 				(font
@@ -7154,7 +7235,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 80.01 146.05 0)
+		(at 73.66 140.97 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -7163,7 +7244,7 @@
 		(fields_autoplaced yes)
 		(uuid "3677baa5-5d39-4c92-9b36-4c91a928438c")
 		(property "Reference" "H5"
-			(at 82.55 144.7799 0)
+			(at 76.2 139.6999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7172,7 +7253,7 @@
 			)
 		)
 		(property "Value" "M2"
-			(at 82.55 147.3199 0)
+			(at 76.2 142.2399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7181,7 +7262,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 80.01 146.05 0)
+			(at 73.66 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7190,7 +7271,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 80.01 146.05 0)
+			(at 73.66 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7199,7 +7280,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 80.01 146.05 0)
+			(at 73.66 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7217,17 +7298,82 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 55.88 152.4 0)
+		(lib_id "power:GND")
+		(at 187.96 121.92 0)
 		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
+		(exclude_from_sim no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "47f4f0c3-f02e-42a3-8a38-88b67042d07e")
-		(property "Reference" "H2"
-			(at 58.42 151.1299 0)
+		(uuid "398b9ebe-84b7-4bac-baa7-14ca05c1a180")
+		(property "Reference" "#PWR5"
+			(at 187.96 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 187.96 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 187.96 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c290a019-c393-43f9-8cc7-1c7b59ef5aa2")
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "#PWR5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 138.43 118.11 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3f86d154-e8e2-4769-9ff7-b24afe8359d6")
+		(property "Reference" "R8"
+			(at 135.89 119.3801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7235,8 +7381,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "M2"
-			(at 58.42 153.6699 0)
+		(property "Value" "10K"
+			(at 135.89 116.8401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7244,8 +7390,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 55.88 152.4 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 137.414 117.856 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7254,7 +7400,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 55.88 152.4 0)
+			(at 138.43 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7262,19 +7408,95 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
-			(at 55.88 152.4 0)
+		(property "Description" "Resistor, US symbol"
+			(at 138.43 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "2efc767a-f7c0-4b81-8108-737a4dbf0c9e")
+		)
+		(pin "2"
+			(uuid "116027b3-f96b-49d1-91de-6382a3c25ef5")
 		)
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "H2")
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 138.43 92.71 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "481cbc39-ab06-4d22-8868-235a6ad9fb3b")
+		(property "Reference" "R4"
+			(at 135.89 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 135.89 93.9799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 137.414 92.964 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 138.43 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 138.43 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cc6e0d8f-1cc6-42fc-9e53-1ba49c93c9af")
+		)
+		(pin "2"
+			(uuid "9d338f47-29f2-483e-bc74-74c76058f9c2")
+		)
+		(instances
+			(project ""
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -7305,7 +7527,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 53.34 53.34 0)
 			(effects
 				(font
@@ -7342,70 +7564,6 @@
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 55.88 146.05 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "50673e6b-da42-4fce-a1d7-ffc6a14b50ba")
-		(property "Reference" "H1"
-			(at 58.42 144.7799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "M2"
-			(at 58.42 147.3199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 55.88 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 55.88 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 55.88 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "micromouse"
-				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -8010,7 +8168,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X:VL53L0X_vertical"
+		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
 			(at 235.712 150.368 0)
 			(effects
 				(font
@@ -8187,6 +8345,72 @@
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
 					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 138.43 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7bbd6a64-1a3e-4fc7-bda6-d159bcc66dd0")
+		(property "Reference" "#PWR4"
+			(at 138.43 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 138.43 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 138.43 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 138.43 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4d7ba637-5c90-4dd7-ab22-e8c9da0cc818")
+		)
+		(instances
+			(project ""
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "#PWR4")
 					(unit 1)
 				)
 			)
@@ -8612,7 +8836,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
 			(at 194.31 105.41 0)
 			(effects
 				(font
@@ -8891,7 +9115,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X:VL53L0X_vertical"
+		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
 			(at 235.712 137.668 0)
 			(effects
 				(font
@@ -8940,6 +9164,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_US")
+		(at 185.42 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "af9a8956-2b9a-4e01-861b-9db9e3874db3")
+		(property "Reference" "R5"
+			(at 187.96 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 187.96 93.9799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 186.436 92.964 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 185.42 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 185.42 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c105de5c-8a40-491a-a332-099dfb6fe56d")
+		)
+		(pin "2"
+			(uuid "ba80bdbf-f9d7-4a80-90db-579021f847a7")
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Polarized_US")
 		(at 81.28 59.69 0)
 		(unit 1)
@@ -8966,7 +9259,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
 			(at 81.28 59.69 0)
 			(effects
 				(font
@@ -9035,7 +9328,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
 			(at 114.3 59.69 0)
 			(effects
 				(font
@@ -9079,7 +9372,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 80.01 152.4 0)
+		(at 73.66 147.32 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -9088,7 +9381,7 @@
 		(fields_autoplaced yes)
 		(uuid "bbd5363a-c4db-4469-bbc4-65ff71296977")
 		(property "Reference" "H6"
-			(at 82.55 151.1299 0)
+			(at 76.2 146.0499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9097,7 +9390,7 @@
 			)
 		)
 		(property "Value" "M2"
-			(at 82.55 153.6699 0)
+			(at 76.2 148.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9106,7 +9399,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 80.01 152.4 0)
+			(at 73.66 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9115,7 +9408,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 80.01 152.4 0)
+			(at 73.66 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9124,7 +9417,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 80.01 152.4 0)
+			(at 73.66 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9210,7 +9503,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 71.12 152.4 0)
+		(at 64.77 147.32 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -9219,7 +9512,7 @@
 		(fields_autoplaced yes)
 		(uuid "c38d01bd-b79a-41de-93b0-1d127af4e0bc")
 		(property "Reference" "H4"
-			(at 73.66 151.1299 0)
+			(at 67.31 146.0499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9228,7 +9521,7 @@
 			)
 		)
 		(property "Value" "M2"
-			(at 73.66 153.6699 0)
+			(at 67.31 148.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9237,7 +9530,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 71.12 152.4 0)
+			(at 64.77 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9246,7 +9539,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 71.12 152.4 0)
+			(at 64.77 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9255,7 +9548,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 71.12 152.4 0)
+			(at 64.77 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9571,7 +9864,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X:VL53L0X_vertical"
+		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
 			(at 235.712 99.568 0)
 			(effects
 				(font
@@ -10198,7 +10491,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "XH_2p54:2P_male"
 			(at 43.18 53.086 90)
 			(effects
 				(font
@@ -10334,7 +10627,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X:VL53L0X_vertical"
+		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
 			(at 235.712 112.268 0)
 			(effects
 				(font
@@ -10410,7 +10703,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
 			(at 129.54 105.41 0)
 			(effects
 				(font
