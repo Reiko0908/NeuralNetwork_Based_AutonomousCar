@@ -3516,6 +3516,12 @@
 		(uuid "0f05adff-bdfc-4040-97b9-64b970f13e30")
 	)
 	(junction
+		(at 115.57 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "10388586-7c01-4ecb-a5e1-bdb430476589")
+	)
+	(junction
 		(at 224.79 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3846,6 +3852,12 @@
 		(uuid "d7a31b73-17e6-4441-ae6b-62780a6a8e47")
 	)
 	(junction
+		(at 106.68 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d83c800b-21ea-4096-931c-f8e38dc86647")
+	)
+	(junction
 		(at 114.3 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4003,6 +4015,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 151.13) (xy 106.68 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "074c3bf5-4dc7-415d-a524-90b18b28b94c")
+	)
+	(wire
+		(pts
 			(xy 148.59 92.71) (xy 148.59 93.98)
 		)
 		(stroke
@@ -4130,6 +4152,16 @@
 			(type default)
 		)
 		(uuid "11677307-f9aa-4e7c-b0b7-140bbbe160e7")
+	)
+	(wire
+		(pts
+			(xy 106.68 153.67) (xy 115.57 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1201aa95-b45a-4b80-a33e-a88b206d6396")
 	)
 	(wire
 		(pts
@@ -5443,6 +5475,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 154.94) (xy 115.57 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aff04d58-c852-4214-877f-d831d9e55cbe")
+	)
+	(wire
+		(pts
 			(xy 214.63 58.42) (xy 215.9 58.42)
 		)
 		(stroke
@@ -5460,6 +5502,16 @@
 			(type default)
 		)
 		(uuid "b3e2eb1b-b92c-4d91-b9fa-78992593daf8")
+	)
+	(wire
+		(pts
+			(xy 106.68 143.51) (xy 115.57 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b40ae38d-2591-4dd1-80e7-2b542812199a")
 	)
 	(wire
 		(pts
@@ -5583,6 +5635,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 153.67) (xy 115.57 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf0e33db-c731-4801-900d-3cb36bc25723")
+	)
+	(wire
+		(pts
 			(xy 101.6 30.48) (xy 101.6 34.29)
 		)
 		(stroke
@@ -5673,7 +5735,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 143.51) (xy 115.57 143.51)
+			(xy 101.6 143.51) (xy 106.68 143.51)
 		)
 		(stroke
 			(width 0)
@@ -5993,9 +6055,9 @@
 		)
 		(uuid "0ff917b8-b305-49f1-a767-a21118d93b73")
 	)
-	(text "WHEEL MOUNTING HOLES"
+	(text "MOUNTNG HOLES"
 		(exclude_from_sim no)
-		(at 68.58 134.62 0)
+		(at 65.278 136.398 0)
 		(effects
 			(font
 				(size 1.778 1.778)
@@ -6028,6 +6090,28 @@
 			)
 		)
 		(uuid "504fe5c6-d4ea-4b45-b759-098f4d99d2a6")
+	)
+	(text "Wheels"
+		(exclude_from_sim no)
+		(at 75.946 141.224 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+				(thickness 0.1905)
+			)
+		)
+		(uuid "93ffa23b-6e75-4c5a-b61b-2466cc2f7e7d")
+	)
+	(text "Motor Brackets"
+		(exclude_from_sim no)
+		(at 54.102 141.224 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+				(thickness 0.1905)
+			)
+		)
+		(uuid "a9e37584-a1df-4f5d-a9cd-0608fccddd7a")
 	)
 	(text "SENSORS"
 		(exclude_from_sim no)
@@ -6066,18 +6150,20 @@
 		(uuid "f82f7905-e3db-48e5-9ee4-66cd29a718f1")
 	)
 	(label "RGB"
-		(at 55.88 99.06 180)
+		(at 83.82 100.33 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 				(thickness 0.1588)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "01503e31-df03-486c-8d01-ee66079decdc")
 	)
 	(label "3V3"
 		(at 234.95 53.34 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6088,6 +6174,7 @@
 	)
 	(label "5V"
 		(at 138.43 88.9 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6098,6 +6185,7 @@
 	)
 	(label "SDA"
 		(at 234.95 60.96 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6107,7 +6195,8 @@
 		(uuid "08c9063c-1db0-49b2-ba40-a9bd44833d23")
 	)
 	(label "BAT_ADC"
-		(at 110.49 143.51 180)
+		(at 101.6 143.51 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6117,7 +6206,8 @@
 		(uuid "0f1ebdf2-afbd-47ce-aec4-e3f7ab8b5e9d")
 	)
 	(label "SCL"
-		(at 55.88 104.14 180)
+		(at 63.5 100.33 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6128,6 +6218,7 @@
 	)
 	(label "3V3"
 		(at 83.82 97.79 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6138,6 +6229,7 @@
 	)
 	(label "6V"
 		(at 146.05 116.84 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6148,6 +6240,7 @@
 	)
 	(label "5V"
 		(at 185.42 88.9 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6158,6 +6251,7 @@
 	)
 	(label "6V"
 		(at 118.11 30.48 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6168,6 +6262,7 @@
 	)
 	(label "PWM_A"
 		(at 147.32 93.98 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6177,8 +6272,21 @@
 		)
 		(uuid "4228c864-609b-4f43-8837-f6ef9f64dbcf")
 	)
+	(label "PWM_B"
+		(at 63.5 105.41 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+			(justify right bottom)
+		)
+		(uuid "46e65985-6c71-475f-a42b-ef36aaacb6f5")
+	)
 	(label "5V"
 		(at 118.11 52.07 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6187,8 +6295,9 @@
 		)
 		(uuid "6c174953-4d5e-4652-b572-8e7d7f322ffe")
 	)
-	(label "5V"
+	(label "3V3"
 		(at 180.34 125.73 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6199,6 +6308,7 @@
 	)
 	(label "BUTTON"
 		(at 176.53 40.64 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6209,6 +6319,7 @@
 	)
 	(label "5V"
 		(at 173.99 82.55 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6219,6 +6330,7 @@
 	)
 	(label "VBAT"
 		(at 38.1 30.48 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6229,6 +6341,7 @@
 	)
 	(label "SCL"
 		(at 234.95 58.42 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6239,6 +6352,7 @@
 	)
 	(label "3V3"
 		(at 153.67 29.21 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6249,6 +6363,7 @@
 	)
 	(label "RGB"
 		(at 135.89 40.64 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6260,6 +6375,7 @@
 	)
 	(label "3V3"
 		(at 148.59 85.09 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6268,18 +6384,9 @@
 		)
 		(uuid "b86a26f5-0200-4687-b57a-f16180155258")
 	)
-	(label "BAT_ADC"
-		(at 55.88 109.22 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c2fdc64d-13a8-41a6-b8ee-ea7a00b85e22")
-	)
 	(label "VBAT"
 		(at 115.57 134.62 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6289,7 +6396,8 @@
 		(uuid "d29465d0-293a-4542-b0cc-647d5f12bbde")
 	)
 	(label "SDA"
-		(at 55.88 106.68 180)
+		(at 63.5 102.87 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6300,6 +6408,7 @@
 	)
 	(label "3V3"
 		(at 181.61 30.48 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6308,8 +6417,20 @@
 		)
 		(uuid "e0dc174d-e814-479a-a1b3-ee0246748bdc")
 	)
+	(label "BAT_ADC"
+		(at 83.82 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ee9ce7f2-b80f-4682-8a0f-2544c362a948")
+	)
 	(label "PWM_A"
-		(at 55.88 111.76 180)
+		(at 63.5 107.95 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6317,10 +6438,11 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f37becda-6848-4286-9797-16bc7b0b9367")
+		(uuid "efceb95a-8541-422b-9061-0f0870297c7e")
 	)
 	(label "5V"
 		(at 93.98 87.63 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6331,6 +6453,7 @@
 	)
 	(label "PWM_B"
 		(at 173.99 121.92 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6340,19 +6463,9 @@
 		)
 		(uuid "f8347ed2-ae0a-4fab-aa56-9cfd8ec143ba")
 	)
-	(label "PWM_B"
-		(at 55.88 114.3 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.1588)
-			)
-			(justify right bottom)
-		)
-		(uuid "fbe0c074-d75e-4750-b0cd-f450a473f73d")
-	)
 	(label "BUTTON"
-		(at 55.88 101.6 180)
+		(at 63.5 97.79 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6638,7 +6751,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 64.77 140.97 0)
+		(at 69.85 146.05 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -6647,7 +6760,7 @@
 		(fields_autoplaced yes)
 		(uuid "17d7d1ba-2b08-4fc5-bc4c-bc82821c9189")
 		(property "Reference" "H3"
-			(at 67.31 139.6999 0)
+			(at 72.39 144.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6656,7 +6769,7 @@
 			)
 		)
 		(property "Value" "M2"
-			(at 67.31 142.2399 0)
+			(at 72.39 147.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6665,7 +6778,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 64.77 140.97 0)
+			(at 69.85 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6674,7 +6787,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 140.97 0)
+			(at 69.85 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6683,7 +6796,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 64.77 140.97 0)
+			(at 69.85 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6862,7 +6975,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
+		(property "Footprint" "VL53L0X:VL53L0X_vertical"
 			(at 235.712 124.968 0)
 			(effects
 				(font
@@ -7164,22 +7277,20 @@
 	)
 	(symbol
 		(lib_id "Diode:1N5819")
-		(at 121.92 105.41 90)
-		(mirror x)
+		(at 121.92 105.41 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "34a725bd-68a1-4374-a7b3-863709a09ef3")
-		(property "Reference" "D2"
+		(property "Reference" "D4"
 			(at 119.38 103.8224 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "1N5819"
@@ -7188,11 +7299,11 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-323F"
-			(at 126.365 105.41 0)
+			(at 117.475 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7227,7 +7338,7 @@
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "D2")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -7235,16 +7346,16 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 73.66 140.97 0)
+		(at 55.88 152.4 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "3677baa5-5d39-4c92-9b36-4c91a928438c")
-		(property "Reference" "H5"
-			(at 76.2 139.6999 0)
+		(uuid "35fca915-1e94-4969-ba3c-705aeb5956b4")
+		(property "Reference" "H8"
+			(at 58.42 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7253,7 +7364,7 @@
 			)
 		)
 		(property "Value" "M2"
-			(at 76.2 142.2399 0)
+			(at 58.42 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7262,7 +7373,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 73.66 140.97 0)
+			(at 55.88 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7271,7 +7382,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 73.66 140.97 0)
+			(at 55.88 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7280,7 +7391,71 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 73.66 140.97 0)
+			(at 55.88 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 78.74 146.05 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3677baa5-5d39-4c92-9b36-4c91a928438c")
+		(property "Reference" "H5"
+			(at 81.28 144.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2"
+			(at 81.28 147.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 78.74 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 78.74 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 78.74 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7307,7 +7482,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "398b9ebe-84b7-4bac-baa7-14ca05c1a180")
-		(property "Reference" "#PWR5"
+		(property "Reference" "#PWR05"
 			(at 187.96 128.27 0)
 			(effects
 				(font
@@ -7357,7 +7532,7 @@
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "#PWR5")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -7578,7 +7753,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "50d1c1cf-df85-4e4f-b1b5-68c62538356b")
-		(property "Reference" "M1"
+		(property "Reference" "M2"
 			(at 139.446 101.6 0)
 			(effects
 				(font
@@ -7596,7 +7771,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "N20_DC_Motor:N20_DC_Motor"
+		(property "Footprint" "XH_2p54:2P_male"
 			(at 137.16 106.426 0)
 			(effects
 				(font
@@ -7632,7 +7807,71 @@
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "M1")
+					(reference "M2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 55.88 146.05 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5124d0d9-0f04-4f3a-92db-0e80947c6e07")
+		(property "Reference" "H7"
+			(at 58.42 144.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2"
+			(at 58.42 147.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 55.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 55.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 55.88 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "H7")
 					(unit 1)
 				)
 			)
@@ -7844,6 +8083,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 48.26 152.4 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6a2664ab-35bd-4490-bb77-84f81ed2ecc4")
+		(property "Reference" "H2"
+			(at 50.8 151.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2"
+			(at 50.8 153.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 48.26 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 48.26 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 48.26 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Regulator_Linear:L7806")
 		(at 91.44 30.48 0)
 		(unit 1)
@@ -7924,7 +8227,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6cd8789b-0b1b-4af1-8d3c-3df124d7a130")
-		(property "Reference" "M2"
+		(property "Reference" "M1"
 			(at 181.61 101.346 0)
 			(effects
 				(font
@@ -7942,7 +8245,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "N20_DC_Motor:N20_DC_Motor"
+		(property "Footprint" "XH_2p54:2P_male"
 			(at 186.69 106.426 0)
 			(effects
 				(font
@@ -7978,7 +8281,7 @@
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "M2")
+					(reference "M1")
 					(unit 1)
 				)
 			)
@@ -8168,7 +8471,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
+		(property "Footprint" "VL53L0X:VL53L0X_vertical"
 			(at 235.712 150.368 0)
 			(effects
 				(font
@@ -8360,7 +8663,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7bbd6a64-1a3e-4fc7-bda6-d159bcc66dd0")
-		(property "Reference" "#PWR4"
+		(property "Reference" "#PWR04"
 			(at 138.43 128.27 0)
 			(effects
 				(font
@@ -8410,7 +8713,7 @@
 		(instances
 			(project ""
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "#PWR4")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -8493,7 +8796,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7efcbb78-9dfa-434c-8a0d-2fcb5fd6e010")
-		(property "Reference" "D4"
+		(property "Reference" "D2"
 			(at 204.47 103.8224 90)
 			(effects
 				(font
@@ -8547,7 +8850,77 @@
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "D4")
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 106.68 147.32 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7fe1f1fe-3a8e-43b8-993e-c072fa500621")
+		(property "Reference" "C16"
+			(at 103.632 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 104.14 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 105.7148 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 106.68 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "afdbca7f-66a7-45dd-b626-f0fc9d30c993")
+		)
+		(pin "1"
+			(uuid "5ee989a4-7055-4f3f-8ee0-4c0332ea4aa0")
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -8818,7 +9191,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "99a74177-449e-49bb-a761-a25c26e35114")
-		(property "Reference" "C15"
+		(property "Reference" "C14"
 			(at 194.818 103.124 0)
 			(effects
 				(font
@@ -8872,7 +9245,7 @@
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "C15")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -9089,6 +9462,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 48.26 146.05 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "abd11e65-ff90-4aff-b878-c5e5e2befd4a")
+		(property "Reference" "H1"
+			(at 50.8 144.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2"
+			(at 50.8 147.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
+			(at 48.26 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 48.26 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 48.26 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "micromouse"
+				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "VL53L0X:VL53L0X")
 		(at 236.22 129.54 0)
 		(unit 1)
@@ -9115,7 +9552,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
+		(property "Footprint" "VL53L0X:VL53L0X_vertical"
 			(at 235.712 137.668 0)
 			(effects
 				(font
@@ -9372,7 +9809,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 73.66 147.32 0)
+		(at 78.74 152.4 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -9381,7 +9818,7 @@
 		(fields_autoplaced yes)
 		(uuid "bbd5363a-c4db-4469-bbc4-65ff71296977")
 		(property "Reference" "H6"
-			(at 76.2 146.0499 0)
+			(at 81.28 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9390,7 +9827,7 @@
 			)
 		)
 		(property "Value" "M2"
-			(at 76.2 148.5899 0)
+			(at 81.28 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9399,7 +9836,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 73.66 147.32 0)
+			(at 78.74 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9408,7 +9845,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 73.66 147.32 0)
+			(at 78.74 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9417,7 +9854,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 73.66 147.32 0)
+			(at 78.74 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9503,7 +9940,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 64.77 147.32 0)
+		(at 69.85 152.4 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -9512,7 +9949,7 @@
 		(fields_autoplaced yes)
 		(uuid "c38d01bd-b79a-41de-93b0-1d127af4e0bc")
 		(property "Reference" "H4"
-			(at 67.31 146.0499 0)
+			(at 72.39 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9521,7 +9958,7 @@
 			)
 		)
 		(property "Value" "M2"
-			(at 67.31 148.5899 0)
+			(at 72.39 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9530,7 +9967,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 64.77 147.32 0)
+			(at 69.85 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9539,7 +9976,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 147.32 0)
+			(at 69.85 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9548,7 +9985,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 64.77 147.32 0)
+			(at 69.85 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9636,7 +10073,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 115.57 152.4 0)
+		(at 115.57 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9644,7 +10081,7 @@
 		(dnp no)
 		(uuid "c7a73bca-69d0-4f13-9585-64bed432d2dd")
 		(property "Reference" "#PWR03"
-			(at 115.57 158.75 0)
+			(at 115.57 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9653,7 +10090,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 117.602 156.21 0)
+			(at 117.602 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9662,7 +10099,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 152.4 0)
+			(at 115.57 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9671,7 +10108,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 152.4 0)
+			(at 115.57 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9680,7 +10117,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 115.57 152.4 0)
+			(at 115.57 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9864,7 +10301,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
+		(property "Footprint" "VL53L0X:VL53L0X_vertical"
 			(at 235.712 99.568 0)
 			(effects
 				(font
@@ -10627,7 +11064,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "VL53L0X_ToF_Sensor:VL53L0X ToF Sensor"
+		(property "Footprint" "VL53L0X:VL53L0X_vertical"
 			(at 235.712 112.268 0)
 			(effects
 				(font
@@ -10685,7 +11122,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f9001927-5efb-44b0-b6d8-c1a4153daccc")
-		(property "Reference" "C14"
+		(property "Reference" "C15"
 			(at 129.032 103.124 0)
 			(effects
 				(font
@@ -10739,7 +11176,7 @@
 		(instances
 			(project "micromouse"
 				(path "/78fa4260-2b5f-43a2-9452-1df109c99d20"
-					(reference "C14")
+					(reference "C15")
 					(unit 1)
 				)
 			)
