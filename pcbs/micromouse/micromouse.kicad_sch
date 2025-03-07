@@ -5905,7 +5905,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 82.55) (xy 173.99 93.98)
+			(xy 173.99 87.63) (xy 173.99 93.98)
 		)
 		(stroke
 			(width 0)
@@ -6318,7 +6318,7 @@
 		(uuid "88fa8d91-3228-4861-9f31-acf806cc6671")
 	)
 	(label "5V"
-		(at 173.99 82.55 180)
+		(at 173.99 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7041,7 +7041,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "470nF"
 			(at 116.078 40.894 0)
 			(effects
 				(font
@@ -9131,7 +9131,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "0.1uF"
 			(at 102.362 62.738 0)
 			(effects
 				(font
@@ -9200,7 +9200,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1uF"
 			(at 194.818 107.95 0)
 			(effects
 				(font
@@ -9756,7 +9756,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "470nF"
 			(at 115.316 62.738 0)
 			(effects
 				(font
@@ -10147,7 +10147,7 @@
 		(dnp no)
 		(uuid "d6ec17b8-79d1-4323-8a37-9a8aa94ab812")
 		(property "Reference" "R10"
-			(at 184.15 120.65 0)
+			(at 184.404 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10716,7 +10716,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "0.1uF"
 			(at 102.362 40.894 0)
 			(effects
 				(font
@@ -11131,7 +11131,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1uF"
 			(at 129.032 107.95 0)
 			(effects
 				(font
