@@ -1,4 +1,4 @@
-24200016967303591
+24200027326572008
 Arduino_pro_mini
 Arduino_pro_mini
 
@@ -56797,20 +56797,34 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
-ESP32_S3_DevkitC1
-ESP32-S3-DevKitC
-ESP32-S3 general-purpose development board, based on ESP32-S3-WROOM-1 or ESP32-S3-WROOM-1U,It has all the ESP32-S3 pins exposed and is easy to connect and use.
-ESP32-S3
-0
-44
-44
-ESP32_S3_DevkitC1
-ESP32_S3_DevkitC1
+ESP32_modules
+esp32_devkit_c1
 
 
 0
 44
 44
+ESP32_modules
+esp32_wemos_d1_mini
+
+
+0
+40
+40
+ESP32_modules
+esp32s3_super_mini
+
+
+0
+18
+18
+ESP32_modules
+esp8266_wemos_d1_mini
+16-pin module, column spacing 22.86 mm (900 mils), https://wiki.wemos.cc/products:d1:d1_mini, https://c1.staticflickr.com/1/734/31400410271_f278b087db_z.jpg
+ESP8266 WiFi microcontroller
+0
+16
+16
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -97999,17 +98013,3 @@ YH_2p00
 0
 9
 9
-wemos_d1
-wemos_d1
-
-
-0
-40
-40
-wemos_d1_mini
-wemos_d1_mini
-16-pin module, column spacing 22.86 mm (900 mils), https://wiki.wemos.cc/products:d1:d1_mini, https://c1.staticflickr.com/1/734/31400410271_f278b087db_z.jpg
-ESP8266 WiFi microcontroller
-0
-16
-16

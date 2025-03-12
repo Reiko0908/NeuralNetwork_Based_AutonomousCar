@@ -2,3 +2,5 @@
 **/sdkconfig
 **/sdkconfig.old
 **/.cache/
+st7789/
+st7789_test/

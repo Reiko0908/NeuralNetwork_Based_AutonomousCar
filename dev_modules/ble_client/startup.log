@@ -1,0 +1,397 @@
+--- Startup times for process: Primary/TUI ---
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- NVIM STARTING ---
+000.071  000.063: event init
+000.218  000.147: early init
+018.409  018.191: locale set
+018.458  000.049: init first window
+019.208  000.750: inits 1
+019.531  000.323: window checked
+019.544  000.013: parsing arguments
+021.024  000.440  000.440: require('vim.shared')
+021.710  000.229  000.229: require('vim.inspect')
+022.164  000.435  000.435: require('vim._options')
+022.171  001.133  000.469: require('vim._editor')
+022.175  001.725  000.152: require('vim._init_packages')
+022.190  000.922: init lua interpreter
+027.299  005.108: --- NVIM STARTED ---
+
+--- Startup times for process: Embedded ---
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.006  000.006: --- NVIM STARTING ---
+000.061  000.054: event init
+000.183  000.123: early init
+019.424  019.240: locale set
+019.507  000.084: init first window
+020.099  000.592: inits 1
+020.267  000.168: window checked
+020.283  000.016: parsing arguments
+022.152  000.518  000.518: require('vim.shared')
+023.457  000.392  000.392: require('vim.inspect')
+023.878  000.388  000.388: require('vim._options')
+023.884  001.709  000.930: require('vim._editor')
+023.888  002.408  000.181: require('vim._init_packages')
+023.906  001.215: init lua interpreter
+024.551  000.645: expanding arguments
+024.578  000.027: inits 2
+024.905  000.328: init highlight
+024.908  000.003: waiting for UI
+025.000  000.091: done waiting for UI
+025.005  000.005: clear screen
+025.371  000.049  000.049: require('vim.keymap')
+036.742  011.732  011.684: require('vim._defaults')
+036.757  000.020: init default mappings & autocommands
+043.607  000.116  000.116: sourcing D:\Software\Neovim\share\nvim\runtime\ftplugin.vim
+044.647  000.070  000.070: sourcing D:\Software\Neovim\share\nvim\runtime\indent.vim
+048.895  002.338  002.338: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\doom-themes.nvim\colors\doom-dracula.vim
+050.015  001.055  001.055: require('core.keymaps')
+050.363  000.331  000.331: require('core.autocmds')
+055.289  001.013  001.013: require('packer.util')
+055.390  004.622  003.609: require('packer')
+056.505  001.109  001.109: require('packer.log')
+058.500  000.940  000.940: require('packer.async')
+060.202  000.801  000.801: require('packer.result')
+060.211  001.702  000.901: require('packer.jobs')
+060.219  003.658  001.016: require('packer.plugin_utils')
+061.169  000.870  000.870: require('packer.snapshot')
+061.508  011.126  000.867: require('core.plugins')
+061.756  000.085  000.085: require('core.plugin_config.gruvbox')
+063.128  000.484  000.484: require('lualine_require')
+066.088  004.199  003.716: require('lualine')
+073.145  001.309  001.309: require('lualine.highlight')
+083.413  000.519  000.519: require('lualine.utils.mode')
+085.628  023.865  017.838: require('core.plugin_config.lualine')
+087.223  000.617  000.617: require('transparent.config')
+087.844  000.607  000.607: require('transparent.cache')
+087.967  002.069  000.844: require('transparent')
+088.093  002.446  000.377: require('core.plugin_config.nvim-transparent')
+097.060  001.379  001.379: require('vim.treesitter.language')
+098.203  001.122  001.122: require('vim.func')
+099.373  001.121  001.121: require('vim.func._memoize')
+099.485  005.405  001.783: require('vim.treesitter.query')
+100.727  001.232  001.232: require('vim.treesitter._range')
+100.756  008.234  001.597: require('vim.treesitter.languagetree')
+100.770  009.967  001.732: require('vim.treesitter')
+100.780  010.675  000.708: require('nvim-treesitter.compat')
+106.359  003.620  003.620: require('nvim-treesitter.parsers')
+107.371  000.996  000.996: require('nvim-treesitter.utils')
+107.394  005.830  001.213: require('nvim-treesitter.ts_utils')
+107.418  006.631  000.802: require('nvim-treesitter.tsrange')
+108.279  000.853  000.853: require('nvim-treesitter.caching')
+108.307  019.085  000.925: require('nvim-treesitter.query')
+108.331  020.086  001.001: require('nvim-treesitter.configs')
+110.583  000.918  000.918: require('nvim-treesitter.info')
+111.701  001.086  001.086: require('nvim-treesitter.shell_command_selectors')
+111.758  003.403  001.399: require('nvim-treesitter.install')
+122.323  034.221  010.732: require('core.plugin_config.nvim-treesitter')
+124.584  000.824  000.824: require('nvim-tree.log')
+127.209  000.670  000.670: require('nvim-tree.notify')
+127.224  001.571  000.901: require('nvim-tree.events')
+128.870  000.707  000.707: require('nvim-tree.iterators.node-iterator')
+128.987  001.757  001.050: require('nvim-tree.utils')
+129.007  004.410  001.082: require('nvim-tree.view')
+131.790  000.682  000.682: require('nvim-tree.core')
+133.399  000.812  000.812: require('nvim-tree.git.utils')
+134.048  000.638  000.638: require('nvim-tree.renderer.components.devicons')
+135.566  000.767  000.767: require('nvim-tree.classic')
+135.584  001.524  000.757: require('nvim-tree.node')
+135.599  003.797  000.822: require('nvim-tree.node.directory')
+135.607  005.217  000.738: require('nvim-tree.actions.finders.find-file')
+136.498  000.883  000.883: require('nvim-tree.actions.finders.search-node')
+136.509  006.781  000.681: require('nvim-tree.actions.finders')
+138.659  000.787  000.787: require('nvim-tree.node.file')
+138.669  001.558  000.770: require('nvim-tree.actions.fs.create-file')
+140.099  000.671  000.671: require('nvim-tree.lib')
+141.759  000.912  000.912: require('nvim-tree.node.link')
+141.853  001.712  000.800: require('nvim-tree.node.directory-link')
+141.862  003.187  000.803: require('nvim-tree.actions.fs.remove-file')
+142.681  000.812  000.812: require('nvim-tree.actions.fs.rename-file')
+143.438  000.747  000.747: require('nvim-tree.actions.fs.trash')
+143.449  006.933  000.630: require('nvim-tree.actions.fs')
+145.702  000.827  000.827: require('nvim-tree.diagnostics')
+145.714  001.631  000.804: require('nvim-tree.actions.moves.item')
+146.345  000.625  000.625: require('nvim-tree.actions.moves.parent')
+147.039  000.683  000.683: require('nvim-tree.actions.moves.sibling')
+147.080  003.624  000.686: require('nvim-tree.actions.moves')
+148.439  000.671  000.671: require('nvim-tree.actions.node.file-popup')
+149.328  000.878  000.878: require('nvim-tree.actions.node.open-file')
+150.065  000.726  000.726: require('nvim-tree.actions.node.run-command')
+150.845  000.769  000.769: require('nvim-tree.actions.node.system-open')
+150.855  003.768  000.725: require('nvim-tree.actions.node')
+152.235  000.757  000.757: require('nvim-tree.actions.root.change-dir')
+153.408  001.147  001.147: require('nvim-tree.actions.root.dir-up')
+153.422  002.561  000.657: require('nvim-tree.actions.root')
+154.839  000.708  000.708: require('nvim-tree.actions.tree.find-file')
+156.261  000.756  000.756: require('nvim-tree.actions.tree.modifiers.collapse-all')
+157.203  000.931  000.931: require('nvim-tree.actions.tree.modifiers.expand-all')
+157.223  002.373  000.686: require('nvim-tree.actions.tree.modifiers')
+158.025  000.794  000.794: require('nvim-tree.actions.tree.open')
+158.788  000.751  000.751: require('nvim-tree.actions.tree.toggle')
+159.465  000.667  000.667: require('nvim-tree.actions.tree.resize')
+159.476  006.046  000.752: require('nvim-tree.actions.tree')
+159.483  030.470  000.756: require('nvim-tree.actions')
+161.772  000.034  000.034: require('vim.F')
+161.865  002.365  002.332: require('vim.diagnostic')
+161.914  039.231  001.161: require('nvim-tree')
+162.796  000.864  000.864: require('nvim-tree.legacy')
+164.226  000.815  000.815: require('nvim-tree.keymap')
+165.057  000.822  000.822: require('nvim-tree.appearance')
+167.288  000.711  000.711: require('nvim-tree.buffers')
+169.077  000.871  000.871: require('nvim-tree.git.runner')
+170.030  000.942  000.942: require('nvim-tree.watcher')
+170.045  002.748  000.935: require('nvim-tree.git')
+171.569  000.756  000.756: require('nvim-tree.node.file-link')
+171.577  001.527  000.771: require('nvim-tree.node.factory')
+172.292  000.711  000.711: require('nvim-tree.node.root')
+173.818  000.662  000.662: require('nvim-tree.enum')
+173.835  001.536  000.874: require('nvim-tree.explorer.filters')
+174.698  000.858  000.858: require('nvim-tree.marks')
+175.555  000.850  000.850: require('nvim-tree.explorer.live-filter')
+176.450  000.887  000.887: require('nvim-tree.explorer.sorter')
+177.402  000.945  000.945: require('nvim-tree.actions.fs.clipboard')
+180.718  000.741  000.741: require('nvim-tree.renderer.decorator')
+180.729  001.525  000.784: require('nvim-tree.renderer.decorator.bookmarks')
+181.455  000.722  000.722: require('nvim-tree.renderer.decorator.copied')
+182.158  000.696  000.696: require('nvim-tree.renderer.decorator.cut')
+182.992  000.827  000.827: require('nvim-tree.renderer.decorator.diagnostics')
+183.810  000.811  000.811: require('nvim-tree.renderer.decorator.git')
+184.683  000.774  000.774: require('nvim-tree.renderer.decorator.hidden')
+185.499  000.808  000.808: require('nvim-tree.renderer.decorator.modified')
+186.213  000.705  000.705: require('nvim-tree.renderer.decorator.opened')
+186.969  000.749  000.749: require('nvim-tree.renderer.decorator.user')
+187.762  000.787  000.787: require('nvim-tree.renderer.components.padding')
+187.776  009.585  001.180: require('nvim-tree.renderer.builder')
+187.787  010.377  000.792: require('nvim-tree.renderer')
+187.803  022.291  001.140: require('nvim-tree.explorer')
+188.571  000.764  000.764: require('nvim-tree.explorer.watch')
+190.250  000.959  000.959: require('nvim-tree.renderer.components.full-name')
+190.260  001.676  000.718: require('nvim-tree.renderer.components')
+193.884  002.056  002.056: require('nvim-web-devicons.icons-default')
+194.181  003.917  001.861: require('nvim-web-devicons')
+197.951  000.902  000.902: require('nvim-tree.help')
+199.559  000.765  000.765: require('nvim-tree.appearance.hi-test')
+199.596  001.634  000.869: require('nvim-tree.api')
+200.446  000.742  000.742: require('nvim-tree.commands')
+202.014  079.674  006.016: require('core.plugin_config.nvim-tree')
+206.911  000.926  000.926: require('telescope.state')
+211.043  000.849  000.849: require('plenary.bit')
+211.829  000.778  000.778: require('plenary.functional')
+211.924  003.027  001.401: require('plenary.path')
+211.929  003.895  000.868: require('plenary.strings')
+212.839  000.906  000.906: require('telescope.deprecated')
+215.933  001.020  001.020: require('plenary.log')
+216.011  001.956  000.936: require('telescope.log')
+219.796  001.125  001.125: require('plenary.compat')
+219.818  002.347  001.223: require('plenary.job')
+219.889  003.872  001.525: require('telescope.utils')
+219.900  007.054  001.226: require('telescope.sorters')
+221.559  014.636  002.780: require('telescope.config')
+221.570  016.473  000.910: require('telescope.actions.state')
+221.614  017.678  001.205: require('telescope._extensions.file_browser.utils')
+226.723  000.339  000.339: require('vim.fs')
+226.814  001.750  001.410: require('vim.lsp.log')
+228.963  002.140  002.140: require('vim.lsp.protocol')
+233.091  001.446  001.446: require('vim.lsp._snippet_grammar')
+234.243  001.139  001.139: require('vim.highlight')
+234.271  005.295  002.710: require('vim.lsp.util')
+237.136  001.270  001.270: require('vim.lsp.sync')
+237.151  002.842  001.573: require('vim.lsp._changetracking')
+238.965  001.808  001.808: require('vim.lsp.rpc')
+239.074  016.064  002.229: require('vim.lsp')
+239.089  017.469  001.405: require('telescope._extensions.file_browser.lsp')
+243.823  001.218  001.218: require('plenary.window.border')
+244.555  000.720  000.720: require('plenary.window')
+245.327  000.765  000.765: require('plenary.popup.utils')
+245.422  004.134  001.430: require('plenary.popup')
+246.590  001.165  001.165: require('telescope.pickers.scroller')
+247.787  001.188  001.188: require('telescope.actions.utils')
+250.311  001.368  001.368: require('telescope.actions.mt')
+250.419  002.624  001.256: require('telescope.actions.set')
+252.792  001.317  001.317: require('telescope.config.resolve')
+252.803  002.380  001.062: require('telescope.pickers.entry_display')
+253.794  000.986  000.986: require('telescope.from_entry')
+253.968  014.874  002.398: require('telescope.actions')
+255.571  001.596  001.596: require('plenary.scandir')
+259.575  000.680  000.680: require('plenary.tbl')
+259.584  001.529  000.849: require('plenary.vararg.rotate')
+259.589  002.262  000.733: require('plenary.vararg')
+260.323  000.730  000.730: require('plenary.errors')
+260.332  003.989  000.997: require('plenary.async.async')
+263.610  000.773  000.773: require('plenary.async.structs')
+263.622  001.570  000.797: require('plenary.async.control')
+263.664  002.530  000.960: require('plenary.async.util')
+263.669  003.332  000.802: require('plenary.async.tests')
+263.673  008.095  000.774: require('plenary.async')
+263.808  061.507  001.794: require('telescope._extensions.file_browser.actions')
+265.577  000.914  000.914: require('telescope._extensions')
+265.586  001.772  000.859: require('telescope')
+278.794  001.042  001.042: require('telescope._extensions.file_browser.git')
+279.776  000.971  000.971: require('telescope._extensions.file_browser.make_entry_utils')
+280.869  001.086  001.086: require('telescope._extensions.file_browser.fs_stat')
+280.879  004.267  001.168: require('telescope._extensions.file_browser.make_entry')
+283.734  000.735  000.735: require('plenary.class')
+283.755  001.827  001.091: require('telescope._')
+285.532  001.773  001.773: require('telescope.make_entry')
+285.545  004.662  001.062: require('telescope.finders.async_oneshot_finder')
+287.846  001.023  001.023: require('telescope.finders.async_static_finder')
+288.867  001.012  001.012: require('telescope.finders.async_job_finder')
+288.878  003.328  001.293: require('telescope.finders')
+288.924  013.420  001.164: require('telescope._extensions.file_browser.finders')
+290.065  088.044  011.345: require('core.plugin_config.telescope-file-browser')
+291.346  001.101  001.101: require('telescope.builtin')
+291.522  001.449  000.348: require('core.plugin_config.telescope')
+291.902  000.374  000.374: require('core.plugin_config.floaterm')
+292.248  000.339  000.339: require('core.plugin_config.coc')
+293.073  000.261  000.261: require('bufferline.lazy')
+293.549  000.465  000.465: require('bufferline.commands')
+294.147  000.562  000.562: require('bufferline.config')
+294.156  001.709  000.420: require('bufferline')
+295.188  000.409  000.409: require('bufferline.utils')
+295.227  001.057  000.647: require('bufferline.groups')
+295.536  000.280  000.280: require('bufferline.constants')
+295.844  000.299  000.299: require('bufferline.colors')
+296.339  000.322  000.322: require('bufferline.highlights')
+298.738  001.384  001.384: require('vim.version')
+300.025  002.964  001.580: require('bufferline.hover')
+300.869  000.769  000.769: require('bufferline.ui')
+302.362  001.440  001.440: require('vim.treesitter._fold')
+302.421  010.165  001.326: require('core.plugin_config.bufferline')
+303.820  000.529  000.529: require('noice.util.lazy')
+303.831  001.181  000.652: require('noice')
+305.815  001.278  001.278: require('vim.health')
+307.313  000.700  000.700: require('noice.util.call')
+307.324  001.499  000.798: require('noice.util')
+307.330  003.495  000.718: require('noice.health')
+308.026  000.674  000.674: require('noice.config')
+308.040  005.613  000.263: require('core.plugin_config.noice')
+308.784  000.516  000.516: require('incline.helpers')
+310.699  000.477  000.477: require('incline.config.transform')
+310.709  000.918  000.440: require('incline.config.schema')
+311.250  000.536  000.536: require('incline.config.validate')
+311.466  002.294  000.840: require('incline.config')
+312.586  000.496  000.496: require('incline.util')
+313.085  000.490  000.490: require('incline.debounce')
+314.592  000.541  000.541: require('incline.highlight')
+314.604  001.089  000.547: require('incline.winline')
+314.608  001.517  000.428: require('incline.tabpage')
+314.615  003.142  000.639: require('incline.manager')
+314.620  005.828  000.393: require('incline')
+315.015  006.970  000.625: require('core.plugin_config.incline')
+320.425  000.859  000.859: require('outline.utils')
+320.444  002.067  001.209: require('outline.config')
+320.452  003.005  000.938: require('outline.preview')
+322.118  000.879  000.879: require('outline.highlight')
+322.127  001.671  000.792: require('outline.view')
+322.851  000.720  000.720: require('outline.folding')
+324.539  000.861  000.861: require('outline.utils.lsp')
+325.435  000.889  000.889: require('outline.symbols')
+326.200  000.758  000.758: require('outline.utils.init')
+326.208  003.350  000.843: require('outline.parser')
+326.890  000.678  000.678: require('outline.providers.init')
+326.909  010.771  001.347: require('outline.sidebar')
+326.956  011.799  001.028: require('outline')
+328.356  013.335  001.536: require('core.plugin_config.outline')
+329.127  000.568  000.568: require('leap')
+329.672  000.509  000.509: require('leap.user')
+329.903  001.537  000.460: require('core.plugin_config.leap')
+330.469  000.316  000.316: require('alpha.themes.dashboard')
+331.456  000.837  000.837: require('alpha')
+331.586  001.677  000.525: require('core.plugin_config.alpha')
+331.760  000.169  000.169: require('core.plugin_config.vimtex')
+334.886  000.547  000.547: require('notify.util.queue')
+334.899  001.427  000.880: require('notify.util')
+335.673  000.770  000.770: require('notify.config.highlights')
+335.685  003.005  000.808: require('notify.config')
+337.265  000.610  000.610: require('notify.stages')
+337.959  000.685  000.685: require('notify.service.notification')
+340.217  000.761  000.761: require('notify.animate.spring')
+340.225  001.439  000.678: require('notify.animate')
+340.233  002.238  000.799: require('notify.windows')
+342.424  000.815  000.815: require('notify.service.buffer.highlights')
+342.434  001.520  000.706: require('notify.service.buffer')
+342.439  002.203  000.682: require('notify.service')
+343.261  000.818  000.818: require('notify.stages.util')
+343.269  007.579  001.025: require('notify.instance')
+343.277  011.337  000.753: require('notify')
+343.959  000.642  000.642: require('notify.stages.static')
+344.073  012.306  000.327: require('core.plugin_config.notify')
+346.928  000.875  000.875: require('ibl.utils')
+346.945  001.417  000.541: require('ibl.config')
+348.111  000.543  000.543: require('ibl.indent')
+348.123  001.173  000.630: require('ibl.hooks')
+348.129  003.139  000.549: require('ibl.highlights')
+348.727  000.593  000.593: require('ibl.autocmds')
+349.173  000.440  000.440: require('ibl.inlay_hints')
+349.661  000.480  000.480: require('ibl.virt_text')
+350.971  000.806  000.806: require('ibl.scope_languages')
+350.980  001.312  000.507: require('ibl.scope')
+350.989  006.730  000.765: require('ibl')
+352.911  001.795  001.795: require('vim.iter')
+354.800  001.854  001.854: require('vim.lsp.handlers')
+355.035  010.957  000.578: require('core.plugin_config.indent-blankline')
+355.193  000.151  000.151: require('core.plugin_config.tokyonight')
+355.230  293.714  000.335: require('core.plugin_config')
+355.793  000.194  000.194: require('core.project_setup.conventional')
+356.255  000.454  000.454: require('core.project_setup.embedded')
+356.312  001.062  000.413: require('core.project_setup')
+356.317  311.087  001.460: sourcing C:\Users\Admin\AppData\Local\nvim\init.lua
+356.361  008.332: sourcing vimrc file(s)
+359.019  000.055  000.055: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\vimtex\ftdetect\cls.vim
+359.428  000.055  000.055: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\vimtex\ftdetect\tex.vim
+359.753  000.074  000.074: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\vimtex\ftdetect\tikz.vim
+360.031  002.425  002.241: sourcing D:\Software\Neovim\share\nvim\runtime\filetype.lua
+362.048  000.171  000.171: sourcing D:\Software\Neovim\share\nvim\runtime\syntax\synload.vim
+362.204  001.424  001.254: sourcing D:\Software\Neovim\share/nvim/runtime/syntax/syntax.vim
+368.617  001.638  001.638: sourcing C:\Users\Admin\AppData\Local\nvim\plugin\packer_compiled.lua
+374.590  000.343  000.343: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\gzip.vim
+377.807  000.344  000.344: sourcing D:\Software\Neovim\share\nvim\runtime\pack\dist\opt\matchit\plugin\matchit.vim
+377.984  003.004  002.661: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\matchit.vim
+378.464  000.212  000.212: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\matchparen.vim
+378.826  000.030  000.030: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\netrwPlugin.vim
+379.683  000.035  000.035: sourcing C:\Users\Admin\AppData\Local\nvim-data/rplugin.vim
+379.735  000.647  000.612: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\rplugin.vim
+380.204  000.155  000.155: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\shada.vim
+380.565  000.079  000.079: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\spellfile.vim
+381.054  000.191  000.191: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\tarPlugin.vim
+381.414  000.079  000.079: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\tutor.vim
+381.962  000.243  000.243: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\zipPlugin.vim
+382.425  000.172  000.172: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\editorconfig.lua
+382.972  000.227  000.227: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\man.lua
+383.432  000.168  000.168: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\osc52.lua
+383.889  000.149  000.149: sourcing D:\Software\Neovim\share\nvim\runtime\plugin\tohtml.lua
+384.097  016.549: loading rtp plugins
+396.268  000.187  000.187: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\coc.nvim\autoload\coc\rpc.vim
+397.221  000.369  000.369: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\coc.nvim\autoload\coc\util.vim
+400.200  000.237  000.237: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\coc.nvim\autoload\coc\client.vim
+412.082  024.172  023.380: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\coc.nvim\plugin\coc.vim
+413.365  000.149  000.149: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\github-nvim-theme\plugin\github_theme.lua
+415.185  000.532  000.532: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\leap.nvim\plugin\init.lua
+417.280  000.148  000.148: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\nvim-transparent\plugin\transparent.vim
+420.751  000.899  000.899: require('nvim-treesitter.statusline')
+421.964  001.197  001.197: require('nvim-treesitter.query_predicates')
+421.977  003.658  001.562: require('nvim-treesitter')
+422.692  004.513  000.855: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\nvim-treesitter\plugin\nvim-treesitter.lua
+423.746  000.093  000.093: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\nvim-web-devicons\plugin\nvim-web-devicons.vim
+425.110  000.096  000.096: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\plenary.nvim\plugin\plenary.vim
+427.825  000.654  000.654: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\telescope.nvim\plugin\telescope.lua
+429.796  000.715  000.715: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\vim-floaterm\plugin\floaterm.vim
+431.542  000.246  000.246: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\vimtex\plugin\vimtex.vim
+432.579  017.163: loading packages
+433.602  000.314  000.314: sourcing C:\Users\Admin\AppData\Local\nvim-data\site\pack\packer\start\indent-blankline.nvim\after\plugin\commands.lua
+433.776  000.884: loading after plugins
+433.807  000.031: inits 3
+439.832  006.025: reading ShaDa
+440.462  000.630: opening buffers
+440.980  000.375  000.375: require('bufferline.state')
+441.054  000.217: BufEnter autocommands
+441.060  000.006: editing files in windows
+441.137  000.077: --- NVIM STARTED ---
+
