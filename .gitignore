@@ -1,4 +1,5 @@
 **/build/
+**/gerbers/
 **/sdkconfig
 **/sdkconfig.old
 **/.cache/
