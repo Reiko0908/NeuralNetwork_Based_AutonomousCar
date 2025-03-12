@@ -14,15 +14,19 @@ This project focuses on developing an autonomous car system powered by neural ne
 - **Deployment**: Importing the trained model configurations to the car for autonomous navigation.
 
 ## Hardware
+
+### Car Hardware
 - **ESP32-S3 Super Mini**: Main microcontroller used in the car.
 - **GY87 9-DOF IMU**: Inertial measurement unit for orientation and motion sensing.
 - **5 VL53L0X Sensors**: Distance measurement sensors for mapping the environment.
 - **L293DD Motor Driver**: Controls the motors of the car.
 - **GA12 N20 Motor**: Motor with a step-up gearbox of 56:16 for movement.
 - **2S Lipo Battery**
+
+### Gamepad Hardware
 - **Joysticks**
-- **MPU6050**
-- **ESP32-S3 N16r8**
+- **MPU6050 6-DOF IMU**
+- **ESP32-S3 N16R8**
 - **ST7789 LCD TFT SPI Screen**
 - **IP5306 for Power Management**
 - **Low Profile Switches**
