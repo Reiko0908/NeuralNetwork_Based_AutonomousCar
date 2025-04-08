@@ -28,7 +28,7 @@
 // Constructors ////////////////////////////////////////////////////////////////
 
 Vl53l0x::Vl53l0x(){
-  this->esp_i2c.address = ADDRESS_DEFAULT;
+  this->esp_i2c.address = I2C_VL53L0X_ADDR;
   this->io_timeout = 0;
   this->did_timeout = false;
 }
@@ -50,7 +50,7 @@ void Vl53l0x::setAddress(uint8_t new_addr)
 // If io_2v8 (optional) is true or not given, the sensor is configured for 2V8
 // mode.
 bool Vl53l0x::init(i2c_port_t port, bool io_2v8 ){
-  this->esp_i2c.init(ADDRESS_DEFAULT, port);
+  this->esp_i2c.init(I2C_VL53L0X_ADDR, port);
 
   // check model ID register (value specified in datasheet)
   // if (readReg(IDENTIFICATION_MODEL_ID) != 0xEE) { return false; }

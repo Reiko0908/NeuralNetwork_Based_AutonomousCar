@@ -7,8 +7,7 @@
 
 #include "I2c_interface.h"
 
-#define ADDRESS_DEFAULT 0b0101001
-// #define ADDRESS_DEFAULT 0x29
+#define I2C_VL53L0X_ADDR 0b0101001
 
 class Vl53l0x
 {
