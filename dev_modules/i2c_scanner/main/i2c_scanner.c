@@ -8,8 +8,8 @@
 #define APP_CPU_NUM PRO_CPU_NUM
 #endif
 
-#define SDA_PIN 17
-#define SCL_PIN 18
+#define SCL_PIN 2
+#define SDA_PIN 3
 
 static const char *TAG = "i2cscanner";
 

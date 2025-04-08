@@ -32,20 +32,55 @@
 // Constants
 #define ADC_TO_BATTERY_2S 3.3/4096*(10000+6200)/6200
 
+// --------------------------------------------
 // Hardware-relevant variables
 const esp_partition_t *partition;
 adc_oneshot_unit_handle_t adc_handler; 
-
-//
 
 Gy87 imu(true, false, true);
 Vl53l0x tof1, tof2, tof3, tof4, tof5;
 
 //------------- RTOS TASKS --------------------------
-void imu_task(void*);
-void tof_task(void*);
-void pwm_task(void*);
-void battery_monitor_task(void*);
+void imu_task(void*){
+  imu.init_i2c(I2C_NUM_0);
+  imu.init_flash(partition);
+  imu.config(
+    DLPF_ACC_44HZ_GYRO_42HZ,
+    ACC_AFS_SEL_4G,
+    GYRO_FS_SEL_250_DEG_PER_SEC,
+    MAG_SAMPLES_AVERAGED_1,
+    MAG_DATA_OUTPUT_RATE_75_HZ,
+    MAG_FIELD_RANGE_1P3_GA,
+    MAG_MODE_CONTINUOUS_MEASUREMENT
+  );
+
+  while(true){
+    vTaskDelay(pdMS_TO_TICKS(RTOS_IMU_TASK_INTERVAL_MS));
+  }
+}
+
+void tof_task(void*){
+  while(true){
+    vTaskDelay(pdMS_TO_TICKS(RTOS_BATTERY_MONITOR_TASK_INTERVAL_MS));
+  }
+}
+
+void battery_monitor_task(void*){
+  int adc_reading;
+  float battery_voltage;
+  while(true){
+    adc_oneshot_read(adc_handler, ADC_CHANNEL_9, &adc_reading);
+    battery_voltage = adc_reading * ADC_TO_BATTERY_2S;
+    printf("%.4f\n", battery_voltage);
+    vTaskDelay(pdMS_TO_TICKS(RTOS_BATTERY_MONITOR_TASK_INTERVAL_MS));
+  }
+}
+
+void pwm_task(void*){
+  while(true){
+    vTaskDelay(pdMS_TO_TICKS(RTOS_PWM_TASK_INTERVAL_MS));
+  }
+}
 
 //------------- FUNCS --------------------------
 void i2c_scan(){
@@ -119,44 +154,3 @@ extern "C" void app_main(void){
   xTaskCreatePinnedToCore(pwm_task, "pwm task", 4096, NULL, 0, NULL, tskNO_AFFINITY);
 }
 
-//------------- RTOS TASKS --------------------------
-void imu_task(void*){
-  imu.init_i2c(I2C_NUM_0);
-  imu.init_flash(partition);
-  imu.config(
-    DLPF_ACC_44HZ_GYRO_42HZ,
-    ACC_AFS_SEL_4G,
-    GYRO_FS_SEL_250_DEG_PER_SEC,
-    MAG_SAMPLES_AVERAGED_1,
-    MAG_DATA_OUTPUT_RATE_75_HZ,
-    MAG_FIELD_RANGE_1P3_GA,
-    MAG_MODE_CONTINUOUS_MEASUREMENT
-  );
-
-  while(true){
-    vTaskDelay(pdMS_TO_TICKS(RTOS_IMU_TASK_INTERVAL_MS));
-  }
-}
-
-void tof_task(void*){
-  while(true){
-    vTaskDelay(pdMS_TO_TICKS(RTOS_BATTERY_MONITOR_TASK_INTERVAL_MS));
-  }
-}
-
-void battery_monitor_task(void*){
-  int adc_reading;
-  float battery_voltage;
-  while(true){
-    adc_oneshot_read(adc_handler, ADC_CHANNEL_9, &adc_reading);
-    battery_voltage = adc_reading * ADC_TO_BATTERY_2S;
-    printf("%.4f\n", battery_voltage);
-    vTaskDelay(pdMS_TO_TICKS(RTOS_BATTERY_MONITOR_TASK_INTERVAL_MS));
-  }
-}
-
-void pwm_task(void*){
-  while(true){
-    vTaskDelay(pdMS_TO_TICKS(RTOS_PWM_TASK_INTERVAL_MS));
-  }
-}

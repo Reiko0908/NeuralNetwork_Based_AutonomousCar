@@ -79,7 +79,7 @@ bool Vl53l0x::init(i2c_port_t port, bool io_2v8 ){
   // disable SIGNAL_RATE_MSRC (bit 1) and SIGNAL_RATE_PRE_RANGE (bit 4) limit checks
   writeReg(MSRC_CONFIG_CONTROL, readReg(MSRC_CONFIG_CONTROL) | 0x12);
 
-  // set final range signal rate limit to 0.25 MCPS (million counts per second)
+
   setSignalRateLimit(0.25);
 
   writeReg(SYSTEM_SEQUENCE_CONFIG, 0xFF);

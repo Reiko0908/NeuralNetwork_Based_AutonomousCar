@@ -42,19 +42,15 @@ extern "C" void app_main(void)
 
     // Calculate average
     uint32_t sum = 0;
-    for (int i = 0; i < FILTER_SIZE; i++) {
+    for (int i = 0; i < FILTER_SIZE; i++)
       sum += buffer[i];
-    }
     uint16_t filteredData = sum / FILTER_SIZE;
 
-    if (tof.timeoutOccurred())
-      printf("TIMEOUT\n");
-    else
-      printf("Filtered Distance: %d\n", filteredData);
+    if (tof.timeoutOccurred()) printf("TIMEOUT\n");
+    else printf("Filtered Distance: %d\n", filteredData);
 
     vTaskDelay(200 / portTICK_PERIOD_MS);
   }
-
 }
 
 // extern "C" void app_main(void)
